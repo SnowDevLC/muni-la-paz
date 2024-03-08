@@ -9,7 +9,7 @@
 .imgHeader {
   width: 100%;
   min-height: 500px;
-  background-image: url("img/semanajuventud.webp");
+  background-image: url("/img/semanajuventud.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
