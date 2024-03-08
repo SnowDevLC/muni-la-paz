@@ -1,0 +1,204 @@
+{
+  "users": [
+    {
+      "name": "Luis Canales",
+      "email": "usuario1@example.com",
+      "password": "$2b$10$D.RfzQijTcNxkPQ9dzieiOD/mK8EGPRvPdMAG.DYjPxx3YS7.G95q",
+      "rol": "Admin",
+      "active": true,
+      "passwordChanged": true
+    },
+    {
+      "name": "Bruno Gimenez",
+      "email": "usuario2@example.com",
+      "password": "$2b$10$VM0fk.QWcmFxF55JDrBp..oQ6H1O36PkT14Qij8yQ.OOEKAYlZnoG",
+      "rol": "Basic",
+      "active": true,
+      "passwordChanged": false
+    },
+    {
+      "name": "Usuario 3",
+      "email": "usuario3@example.com",
+      "password": "$2b$10$80y8E3QX7IeEOObMkiA6vOPG2Trfqouty3XLWj2YJ9loSJhMq7ixS",
+      "rol": "Basic",
+      "active": false,
+      "passwordChanged": false
+    }
+  ],
+  "publications": [
+    {
+      "type": "Servicio",
+      "title": "Vecinos, usuarios de agua corriente",
+      "description": "El servicio de agua corriente estará interrumpido hasta mañana lunes 8/1 al mediodía.",
+      "date": "2024-03-04T23:30:46.682Z",
+      "isEvent": false,
+      "eventDate": "2024-02-05T23:30:46.682Z",
+      "images": ["/public/images/publications/1/noticia1.jpg"],
+      "check": true
+    },
+    {
+      "type": "Cultura",
+      "title": "Semana de la Juventud",
+      "description": "Ante las recientes lluvias intensas, se ha observado un aumento significativo en el nivel de varios arroyos en nuestra comunidad. Instamos a todos los residentes a tomar precauciones inmediatas y evitar áreas cercanas a estos cuerpos de agua.",
+      "date": "2024-03-03T22:30:46.682Z",
+      "isEvent": false,
+      "eventDate": "2024-02-05T22:30:46.682Z",
+      "images": ["/public/images/publications/2/noticia2.jpg"],
+      "check": true
+    },
+    {
+      "type": "Deporte",
+      "title": "Vacunatorio municipal informa",
+      "description": "El pediatra a partir de Enero completará las planillas de cus, los días Martes y Jueves",
+      "images": ["/public/images/publications/3/noticia3.jpg"],
+      "date": "2024-02-01T22:30:46.682Z",
+      "isEvent": true,
+      "eventDate": "2024-03-15T22:30:46.682Z",
+      "check": true
+    },
+    {
+      "type": "General",
+      "title": "Comunicado Urgente: Precaución por Crecida de Arroyos",
+      "description": "Ante las recientes lluvias intensas, se ha observado un aumento significativo en el nivel de varios arroyos en nuestra comunidad. Instamos a todos los residentes a tomar precauciones inmediatas y evitar áreas cercanas a estos cuerpos de agua. Ante las recientes lluvias intensas, se ha observado un aumento significativo en el nivel de varios arroyos en nuestra comunidad. Instamos a todos los residentes a tomar precauciones inmediatas y evitar áreas cercanas a estos cuerpos de agua.",
+      "date": "2024-02-29T22:30:46.682Z",
+      "isEvent": false,
+      "eventDate": "2024-01-06T22:30:46.682Z",
+      "images": ["/public/images/publications/4/noticia2.jpg"],
+      "check": false
+    },
+    {
+      "type": "Concejo",
+      "title": "Comunicado Urgente: Precaución por Crecida de Arroyos",
+      "description": "Ante las recientes lluvias intensas, se ha observado un aumento significativo en el nivel de varios arroyos en nuestra comunidad. Instamos a todos los residentes a tomar precauciones inmediatas y evitar áreas cercanas a estos cuerpos de agua.",
+      "date": "2024-02-27T22:30:46.682Z",
+      "isEvent": false,
+      "eventDate": "2024-01-05T22:30:46.682Z",
+      "images": ["/public/images/publications/5/noticia2.jpg"],
+      "check": true
+    },
+    {
+      "type": "Salud",
+      "title": "Vacunatorio municipal informa",
+      "description": "El pediatra a partir de Enero completará las planillas de cus, los días Martes y Jueves",
+      "images": ["/public/images/publications/6/noticia3.jpg"],
+      "date": "2023-12-29T22:30:46.682Z",
+      "isEvent": false,
+      "eventDate": "2023-12-29T22:30:46.682Z",
+      "check": false
+    },
+    {
+      "type": "Deporte",
+      "title": "Comunicado Urgente: Precaución por Crecida de Arroyos",
+      "description": "Ante las recientes lluvias intensas, se ha observado un aumento significativo en el nivel de varios arroyos en nuestra comunidad. Instamos a todos los residentes a tomar precauciones inmediatas y evitar áreas cercanas a estos cuerpos de agua. Ante las recientes lluvias intensas, se ha observado un aumento significativo en el nivel de varios arroyos en nuestra comunidad. Instamos a todos los residentes a tomar precauciones inmediatas y evitar áreas cercanas a estos cuerpos de agua.",
+      "date": "2024-02-15T22:30:46.682Z",
+      "isEvent": false,
+      "eventDate": "2024-01-23T22:30:46.682Z",
+      "images": ["/public/images/publications/7/noticia2.jpg"],
+      "check": true
+    },
+    {
+      "type": "Concejo",
+      "title": "LA CRUZ PASO A SER LEGALMENTE DE LA PAZ",
+      "description": "En un hito histórico, la emblemática Cruz de la Paz finalmente recibió reconocimiento legal, marcando un momento significativo para la comunidad. Durante años, esta icónica cruz ha sido un símbolo de unidad, esperanza y armonía en nuestra región, y ahora, su estatus legal consolida su importancia.",
+      "date": "2024-01-29T22:30:46.682Z",
+      "isEvent": false,
+      "eventDate": "2024-01-29T22:30:46.682Z",
+      "images": ["/public/images/publications/8/lacruz.jpg"],
+      "check": true
+    },
+    {
+      "type": "Cultura",
+      "title": "Festival de la empanada",
+      "description": "Un festival de empanadas es un evento culinario que celebra y destaca la versatilidad y diversidad de este delicios platillo en sus diversas formas y sabores. Este tipo de festivales reúnen a amantes de la comida para disfrutar de una amplia variedad de empanadas, que pueden incluir opciones tradicionales y creativas. Durante el festival, los participantes pueden probar empanadas rellenas con una variedad de ingredientes, desde las clásicas de carne, pollo o queso, hasta opciones más innovadoras que fusionan sabores loca.",
+      "date": "2024-01-20T22:30:46.682Z",
+      "isEvent": true,
+      "eventDate": "2024-04-20T22:30:46.682Z",
+      "images": ["/public/images/publications/9/Empanada-3.jpg"],
+      "check": true
+    },
+    {
+      "type": "Deporte",
+      "title": "Campeonato de voley",
+      "description": "Un campeonato de vóley es un emocionante evento deportivo que reúne a equipos de diferentes lugares para competir en partidos de voleibol. Durante el torneo, los equipos demuestran sus habilidades en la cancha, compitiendo en partidos intensos y emocionantes. Los fanáticos disfrutan del ambiente vibrante, la competitividad y la camaradería entre los jugadores. Estos campeonatos suelen ser una celebración del talento atlético, promoviendo la pasión por el voleibol y fomentando el espíritu deportivo.",
+      "date": "2024-01-19T22:30:46.682Z",
+      "eventDate": "2024-02-28T22:30:46.682Z",
+      "isEvent": true,
+      "images": ["/public/images/publications/10/voley.jpg"],
+      "check": true
+    },
+    {
+      "type": "Turismo",
+      "title": "Senderismo corralito",
+      "description": "El senderismo es una actividad recreativa y deportiva que consiste en caminar por senderos o rutas marcadas en entornos naturales, como bosques, montañas, parques nacionales o áreas rurales. Esta práctica suele realizarse al aire libre, permitiendo a los participantes disfrutar de la naturaleza y explorar paisajes diversos mientras se desplazan a pie.",
+      "date": "2024-01-15T22:30:46.682Z",
+      "isEvent": false,
+      "eventDate": "2024-01-15T22:30:46.682Z",
+      "images": ["/public/images/publications/11/senderismo.jpg"],
+      "check": true
+    },
+    {
+      "type": "Institucional",
+      "title": "SE BRINDO APORTES EN PESOS AL CLUB DE LA PAZ",
+      "description": "Hoy, la comunidad se unió con entusiasmo para brindar un significativo aporte al Club de la Paz. Personas de todas las edades y ámbitos se congregaron con un propósito común: fortalecer las bases de un lugar que ha sido un faro de unión y solidaridad en nuestro vecindario.",
+      "date": "2024-02-02T22:30:46.682Z",
+      "isEvent": false,
+      "eventDate": "2024-02-02T22:30:46.682Z",
+      "images": ["/public/images/publications/12/clublapaz.jpg"],
+      "check": true
+    }
+  ],
+  "complexes": [
+    {
+      "name": "Cabañas La Paz",
+      "description": "Nuestra Hosteria cuenta con 12 habitaciones, en un ambiente íntimo donde los huéspedes podrán disfrutar de un parque de 4 hectáreas, realizar paseos entre nogales, olivos, robles, ceibos, innumerables plantas autóctonas y hermosas flores.",
+      "lat": -32.2172425800549,
+      "lng": -65.04836357980413,
+      "address": "Calle 123",
+      "images": ["/public/images/complexes/1/complejo.jpg", "/public/images/complexes/1/complejo1.jpg", "/public/images/complexes/1/complejo2.jpg", "/public/images/complexes/1/complejo4.jpg"],
+      "tel":"3554454643",
+      "whatsapp": "3554454643",
+      "email": "prueba@email.com",
+      "web": "prueba.com.ar",
+      "check": true
+    },
+    {
+      "name": "Cerro Loma Bola",
+      "description": "Nuestra Hosteria cuenta con 12 habitaciones, en un ambiente íntimo donde los huéspedes podrán disfrutar de un parque de 4 hectáreas, realizar paseos entre nogales, olivos, robles, ceibos, innumerables plantas autóctonas y hermosas flores.",
+      "lat": -32.2172425800549,
+      "lng": -65.04836357980413,
+      "address": "Calle 123",
+      "images": ["/public/images/complexes/2/complejo1.jpg"],
+      "tel":"3554454643",
+      "whatsapp": "3554454643",
+      "email": "prueba@email.com",
+      "web": "prueba.com.ar",
+      "check": true
+    },
+    {
+      "name": "Bello Horizonte",
+      "description": "Nuestra Hosteria cuenta con 12 habitaciones, en un ambiente íntimo donde los huéspedes podrán disfrutar de un parque de 4 hectáreas, realizar paseos entre nogales, olivos, robles, ceibos, innumerables plantas autóctonas y hermosas flores.",
+      "lat": -32.2172425800549,
+      "lng": -65.04836357980413,
+      "address": "Calle 123",
+      "images": ["/public/images/complexes/3/complejo2.jpg"],
+      "tel":"3554454643",
+      "whatsapp": "3554454643",
+      "email": "prueba@email.com",
+      "web": "prueba.com.ar",
+      "check": true
+    },
+    {
+      "name": "Cabañas La Sonrisa",
+      "description": "Nuestra Hosteria cuenta con 12 habitaciones, en un ambiente íntimo donde los huéspedes podrán disfrutar de un parque de 4 hectáreas, realizar paseos entre nogales, olivos, robles, ceibos, innumerables plantas autóctonas y hermosas flores.",
+      "lat": -32.2172425800549,
+      "lng": -65.04836357980413,
+      "address": "Calle 1234",
+      "images": ["/public/images/complexes/4/complejo4.jpg"],
+      "tel":"3554454643",
+      "whatsapp": "3554454643",
+      "email": "prueba@email.com",
+      "web": "prueba.com.ar",
+      "check": true
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+.container {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgHeader {
+  width: 100%;
+  min-height: 500px;
+  background-image: url("/img/alojamiento.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .titleHeader {
+    color: white;
+    filter: drop-shadow(0 0 5px black);
+    font-size: 2.5rem;
+  }
+}
+
+.navTitles {
+  margin-top: 1rem;
+  width: 80%;
+  display: flex;
+  align-items: start;
+  gap: 0.5rem;
+
+  a {
+    color: var(--main-text-color);
+  }
+  a:hover {
+    color: var(--main-color);
+  }
+
+  span {
+    color: var(--main-color);
+  }
+  span::before {
+    color: var(--main-text-color);
+    content: "/";
+    margin-right: 0.5rem;
+  }
+}
+
+.title {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+  align-items: start;
+  & h2 {
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 30px;
+  }
+  & span {
+    font-size: 30px;
+    font-weight: 400;
+  }
+} 
+
+.search {
+  min-width: 20%;
+}
+
+.grid {
+  width: 70%;
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+
+
+
+/*---MEDIIA QUERIES---*/
+
+@media screen and (max-width: 1188px) {
+
+  .grid {
+    justify-content: center;
+  }
+
+  .imgHeader {
+    min-height: 300px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    margin-top: 70px;
+  }
+
+  .imgHeader {
+    min-height: 200px;
+  
+    .titleHeader {
+      color: white;
+      filter: drop-shadow(0 0 5px black);
+      font-size: 2rem;
+    }
+  }
+
+  .title {
+    & h2 {
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 24px;
+    }
+    & span {
+      font-size: 22px;
+    }
+  }
+
+  .grid {
+    width: 80%;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 280px));
+    justify-content: center;
+  }
+}

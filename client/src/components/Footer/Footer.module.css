@@ -1,0 +1,100 @@
+footer {
+  width: 100%;
+  margin-top: auto;
+}
+
+.topFooter {
+  background-color: var(--footer-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  column-gap: 3rem;
+  flex-wrap: wrap;
+  & .contact {
+    color: var(--secondary-color);
+    align-items: center;
+    margin: 1rem 0;
+    flex-direction: column;
+    display: flex;
+    & span {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    & p {
+      font-size: 16px;
+      margin-bottom: .5rem;
+    }
+    &:hover:after {
+      width: 100%;
+      background: #00e257;
+    }
+    &:after {
+      content: "";
+      display: block;
+      margin: auto;
+      height: 3px;
+      width: 0;
+      background: transparent;
+      transition: width 0.5s ease, background-color 0.5s ease;
+    }
+  }
+}
+
+.bottomFooter {
+  background-color: var(--secondary-color);
+  & .contentBottomFooter {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 0.5rem 0;
+    & a {
+      font-size: 22px;
+      color: white;
+    }
+    & span {
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+}
+
+
+
+/*---MEDIIA QUERIES---*/
+@media screen and (max-width: 600px) {
+  .topFooter {
+    column-gap: 2rem;
+    & .contact {
+      margin: .5rem 0;
+      & span {
+        font-size: 16px;
+        font-weight: 700;
+      }
+      & p {
+        font-size: 14px;
+      }
+    }
+    & .login {
+      margin-top: 0;
+    }
+  }
+  
+  .bottomFooter {
+    & .contentBottomFooter {
+      width: 80%;
+      flex-direction: column;
+      justify-content: center;
+      gap: .5rem;
+      & a {
+        font-size: 20px;
+      }
+      & span {
+        font-size: 14px;
+      }
+    }
+  }
+  
+}

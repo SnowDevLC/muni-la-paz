@@ -1,0 +1,184 @@
+.login {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  width: 60%;
+  margin: 2rem auto;
+  justify-content: space-between;
+  border-radius: 10px;
+  background: white;
+}
+
+.rightDiv {
+  position: relative;
+  display: flex;
+  flex-basis: 50%;
+  width: 70%;
+  padding: 0 1.5rem;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #93ffa156;
+
+  .textDiv {
+    position: relative;
+  }
+  
+  .footerRightDiv {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    bottom: 20px;
+    padding: 0 1rem;
+    font-size: 13px;
+  }
+}
+
+.formDiv {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  flex-basis: 50%;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.formHeader {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.image {
+  width: 200px;
+  aspect-ratio: 50/39;
+}
+
+.form {
+  display: grid;
+  align-items: center;
+  gap: 1rem;
+}
+
+.inputDiv {
+  input {
+    background: none;
+    outline: none;
+    border: none;
+    width: 200px;
+  }
+  label {
+    font-size: 14px;
+    font-weight: 400;
+    padding: .5rem 0;
+    display: block;
+  }
+  .input {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background: #93ffa156;
+  }
+}
+
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  padding: .8rem;
+  background: var(--main-color);
+  color: white;
+  border-radius: 10px;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  font-size: 16px;
+  width: 100%;
+  gap: .5rem;
+  transition: 0.3s ease;
+  span {
+    font-weight: 600;
+  }
+  .icon {
+    font-size: 25px;
+    transition: .3s ease;
+  }
+  &:hover {
+    background: var(--secondary-color);
+    .icon {
+      
+      transform: translateX(5px);
+    }
+  }
+}
+
+.forgotPassword {
+  font-size: 13px;
+  color: black;
+  opacity: .7;
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+.showMessage {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  color: white;
+  background: red;
+  border-radius: 3px;
+  text-align: center;
+  padding: 10px;
+}
+
+
+/*----------------------*/
+/*MEDIA QUERIES - RESPONSIVE*/
+
+@media screen and (max-width: 768px) {
+  .login {
+    .container{
+      height: 100%;
+      width: 80%;
+      flex-direction: column;
+
+      .rightDiv {
+        width: 100%;
+        padding-top: 1.5rem;
+        .textDiv {
+          h2 {
+            font-size: 20px;
+          }
+          p{
+            padding: 1rem;
+          }
+        }
+
+        .footerRightDiv {
+          position: relative;
+          margin-top: 3rem;
+        }
+      }
+
+      .formDiv {
+        padding: 0;
+      }
+    }
+  }
+}
+
