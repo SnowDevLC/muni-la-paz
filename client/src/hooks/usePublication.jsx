@@ -5,15 +5,15 @@ import {getPublicationDetail, cleanDetail} from "../redux/actions";
 
 const usePublication = () => {
     const dispatch = useDispatch();
-    const {id} = useParams();
+    const {title} = useParams();
     const publication = useSelector((state) => state.publicationDetail);
 
     useEffect(() => {
-        dispatch(getPublicationDetail(id));
+        dispatch(getPublicationDetail(title));
         return () => {
             dispatch(cleanDetail());
         };
-    }, [dispatch, id]);
+    }, [dispatch, title]);
 
     return publication && publication.images ? publication : null;
 };

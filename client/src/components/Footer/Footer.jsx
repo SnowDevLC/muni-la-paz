@@ -30,7 +30,7 @@ export default function Footer() {
           <Link>
             www.<b>lapazcba</b>.gob.ar
           </Link>
-          <span>Buenos Aires 50</span>
+          <span>Buenos Aires 50 - La Paz</span>
         </div>
       </div>
     </footer>

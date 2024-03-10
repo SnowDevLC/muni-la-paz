@@ -6,7 +6,7 @@ const upload = require('../middlewares/upload/upload');
 
 router.get('/', getAllComplexesHandler);
 router.get('/name', getComplexesByNameHandler);
-router.get('/:id', getComplexByIdHandler);
+router.get('/:name', getComplexByIdHandler);
 router.post('/', verifyToken, upload, postComplexHandler);
 router.patch('/:id', verifyToken, upload, updateComplexHandler);
 router.delete('/:id', verifyToken, deleteComplexHandler);
