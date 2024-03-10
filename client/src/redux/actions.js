@@ -58,10 +58,10 @@ export const getUsers = (token) => {
     };
 };
 
-export const getComplexDetail = (id) => {
+export const getComplexDetail = (name) => {
     return async (dispatch) => {
         try {
-            const { data } = await axios.get(`${VITE_BACKEND_URL}/complexes/${id}`);
+            const { data } = await axios.get(`${VITE_BACKEND_URL}/complexes/${name}`);
             return dispatch({
                 type: GET_COMPLEX_DETAIL,
                 payload: data,
@@ -75,10 +75,10 @@ export const getComplexDetail = (id) => {
     };
 };
 
-export const getPublicationDetail = (id) => {
+export const getPublicationDetail = (title) => {
     return async (dispatch) => {
         try {
-            const { data } = await axios.get(`${VITE_BACKEND_URL}/publications/${id}`);
+            const { data } = await axios.get(`${VITE_BACKEND_URL}/publications/${title}`);
             return dispatch({
                 type: GET_PUBLICATION_DETAIL,
                 payload: data,

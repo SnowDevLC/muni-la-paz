@@ -43,8 +43,8 @@ function App() {
         <Route exact path="/contacto" element={<Contacts />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/alojamientos" element={<Complexes complexes={complexes} />} />
-        <Route exact path="/alojamientos/:id" element={<ComplexDetail />} />
-        <Route exact path="/noticia/:id" element={<PublicationDetail />} />
+        <Route exact path="/alojamientos/:name" element={<ComplexDetail />} />
+        <Route exact path="/noticia/:title" element={<PublicationDetail />} />
         <Route exact path="/noticias" element={<Publications />} />
         <Route exact path="/cultura" element={<Publications items={culture} />} />
         <Route exact path="/salud" element={<Publications items={health} />} />

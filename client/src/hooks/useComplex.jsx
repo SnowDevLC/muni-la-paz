@@ -5,16 +5,16 @@ import {getComplexDetail, cleanDetail} from "../redux/actions";
 
 const useComplex = () => {
     const dispatch = useDispatch();
-    const {id} = useParams();
+    const {name} = useParams();
 
     const complex = useSelector((state) => state.complexDetail);
 
     useEffect(() => {
-        dispatch(getComplexDetail(id));
+        dispatch(getComplexDetail(name));
         return () => {
             dispatch(cleanDetail());
         };
-    }, [dispatch, id]);
+    }, [dispatch, name]);
     return complex && complex.images ? complex : null;
 };
 

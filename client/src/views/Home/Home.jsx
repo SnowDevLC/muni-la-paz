@@ -6,9 +6,10 @@ import { FaHeartbeat, FaBook, FaRegCalendarAlt } from "react-icons/fa";
 import { format, setDefaultOptions } from "date-fns";
 import { es } from "date-fns/locale";
 setDefaultOptions({ locale: es });
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 import style from "./Home.module.css";
-const { VITE_BACKEND_URL } = import.meta.env;
+const { VITE_BACKEND_URL, VITE_GOOGLE_MAPS_API_KEY } = import.meta.env;
 
 export default function Home({ publications, complexes }) {
   const filteredPublications = publications
@@ -18,6 +19,11 @@ export default function Home({ publications, complexes }) {
   const events = publications
     .filter((publication) => publication.check && publication.isEvent && new Date(publication.eventDate) > new Date())
     .sort((a, b) => new Date(a.eventDate) - new Date(b.eventDate));
+
+  const handleMarkerClick = () => {
+    const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${-32.217487},${-65.049124}`;
+    window.open(googleMapsUrl, "_blank");
+  };
 
   return (
     <main>
@@ -133,6 +139,19 @@ export default function Home({ publications, complexes }) {
           Más alojamientos
           <FaArrowRight size={25} />
         </Link>
+      </section>
+      <section>
+        <div className={style.map}>
+          <LoadScript googleMapsApiKey={VITE_GOOGLE_MAPS_API_KEY}>
+            <GoogleMap
+              center={{ lat: -32.217487, lng: -65.049124 }}
+              zoom={15}
+              mapContainerStyle={{ height: "400px" }}
+            >
+              <Marker position={{ lat: -32.217487, lng: -65.049124 }} onClick={handleMarkerClick} />
+            </GoogleMap>
+          </LoadScript>
+        </div>
       </section>
     </main>
   );
