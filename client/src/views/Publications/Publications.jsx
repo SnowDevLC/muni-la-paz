@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-
+import { Helmet } from "react-helmet";
 import style from "./Publications.module.css";
 import { Pagination, Publication, SearchBar } from "../../components";
 import { filteredPublications, setCurrentPage } from "../../redux/actions";
@@ -13,6 +13,8 @@ export default function Publications({ items }) {
   const publications = currentView || currentViewItems;
 
   const location = useLocation();
+
+  const url = window.location.href;
 
   const [filters, setFilters] = useState({
     type: "TODAS LAS CATEGORIAS",
@@ -78,13 +80,11 @@ export default function Publications({ items }) {
         <>
           <header className={style.imgHeader}>
             <div className={style.titleHeader}>
-              <h2>
-                Agenda
-              </h2>
+              <h2>Agenda</h2>
             </div>
           </header>
           <nav className={style.navTitles}>
-            <Link to='/'>Home</Link>
+            <Link to="/">Home</Link>
             <span>Eventos</span>
           </nav>
           <div className={style.title}>
@@ -107,8 +107,14 @@ export default function Publications({ items }) {
       )}
       {location.pathname === "/noticias" && (
         <>
+          <Helmet>
+            <meta property="og:title" content="Noticias - Municipalidad de La Paz" />
+            <meta property="og:description" content="Todas las Noticias de la Localidad de La Paz" />
+            <meta property="og:image" content="img" />
+            <meta property="og:url" content={url} />
+          </Helmet>
           <nav className={style.navTitles}>
-            <Link to='/'>Home</Link>
+            <Link to="/">Home</Link>
             <span>Noticias</span>
           </nav>
           <div className={style.title}>
