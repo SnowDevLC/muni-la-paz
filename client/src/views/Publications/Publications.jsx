@@ -111,7 +111,7 @@ export default function Publications({ items }) {
             <meta property="og:title" content="Noticias - Municipalidad de La Paz" />
             <meta property="og:description" content="Todas las Noticias de la Localidad de La Paz" />
             <meta property="og:image" content="img" />
-            <meta property="og:url" content={url} />
+            <meta property="og:url" content={`https://muni-la-paz.vercel.app${window.location.pathname}`} />
           </Helmet>
           <nav className={style.navTitles}>
             <Link to="/">Home</Link>
