@@ -18,6 +18,13 @@
       aspect-ratio: 1 / 1;
     }
 
+    .pdfContainer {
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+    }
+
     .cardText {
       min-height: 150px;
       padding: 15px;
@@ -149,6 +156,10 @@
   .card {
     .data {
       & img {
+        height: 210px;
+      }
+
+      .pdfContainer {
         height: 210px;
       }
 

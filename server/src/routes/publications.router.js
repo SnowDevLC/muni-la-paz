@@ -6,7 +6,7 @@ const { getPublicationsHandler, postPublicationHandler, getPublicationsByTitleHa
 
 router.get('/', getPublicationsHandler);
 router.get('/title', getPublicationsByTitleHandler);
-router.get('/:title', getPublicationByIdHandler);
+router.get('/:id', getPublicationByIdHandler);
 router.post('/', verifyToken, upload, postPublicationHandler);
 router.patch('/:id', verifyToken, upload, updatePublicationHandler);
 router.delete('/:id', verifyToken, deletePublicationHandler);

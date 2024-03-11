@@ -64,6 +64,20 @@
   font-weight: 500;
   a {
     color: white;
+    &:hover:after {
+      width: 100%;
+      background: white;
+    }
+    &:after {
+      content: "";
+      display: block;
+      margin: auto;
+      margin-top: 0.25rem;
+      height: 3px;
+      width: 0;
+      background: transparent;
+      transition: width 0.5s ease, background-color 0.5s ease;
+    }
   }
   white-space: nowrap;
 }

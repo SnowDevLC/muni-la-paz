@@ -6,6 +6,7 @@ import { Pagination, Publication, SearchBar } from "../../components";
 import { filteredPublications, setCurrentPage } from "../../redux/actions";
 import usePaginate from "../../hooks/usePaginate";
 import { Link, useLocation } from "react-router-dom";
+import { councilors } from "../../utils/const";
 
 export default function Publications({ items }) {
   const { currentView, currentViewItems } = usePaginate(items);
@@ -66,12 +67,27 @@ export default function Publications({ items }) {
 
   return (
     <div className={style.container}>
-      {location.pathname === "/servicios" && (
+      {location.pathname === "/concejo" && (
         <>
+          <nav className={style.navTitles}>
+            <Link to="/">Home</Link>
+            <span>Concejo Deliberante</span>
+          </nav>
+          <div className={style.councilors}>
+            <h1 className={style.titleCouncil}>Concejales y Concejalas</h1>
+            <div className={style.gridCouncilors}>
+              {councilors?.map((councilor, index) => (
+                <div key={index} className={style.councilor}>
+                  <img className={style.imgCouncilor} src={councilor.img} alt={councilor.name} />
+                  <p>{councilor.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
           <div className={style.title}>
             <h2>
-              Todas<br></br>
-              <span>Las Noticias</span>
+              Últimas<br></br>
+              <span>Entradas</span>
             </h2>
           </div>
         </>

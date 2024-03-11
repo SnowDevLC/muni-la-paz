@@ -11,9 +11,15 @@ import { format, setDefaultOptions } from "date-fns";
 import { es } from "date-fns/locale";
 setDefaultOptions({ locale: es });
 
+import { Document, Page, pdfjs } from "react-pdf";
+pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.js", import.meta.url).toString();
+
+
 export default function Publication({ publication, complex, authUser, handleForm }) {
   const dispatch = useDispatch();
   const location = useLocation();
+
+  
 
   const handleDelete = async (type) => {
     Swal.fire({
@@ -95,21 +101,33 @@ export default function Publication({ publication, complex, authUser, handleForm
   return publication ? (
     <div className={style.card}>
       <Link
-        to={`/noticia/${publication.title}`}
+        to={`/noticia/${publication.id}`}
         target={location.pathname === "/dashboard" ? "_blank" : "_self"}
         className={style.data}
       >
-        <img src={VITE_BACKEND_URL + publication.images[0]} alt={publication.title} />
+        {publication.type === "Concejo" ? (
+          <div className={style.pdfContainer}>
+            <Document file={VITE_BACKEND_URL + publication.images[0]}>
+              <Page pageNumber={1} width={400} renderTextLayer={false} renderAnnotationLayer={false} />
+            </Document>
+          </div>
+        ) : (
+          // <embed className={style.pdf} src={`${pdf}`} type="application/pdf" width="100%" height="100%" />
+          // <img src={VITE_BACKEND_URL + publication.images[0]} alt={publication.title} />
+          <img src={VITE_BACKEND_URL + publication.images[0]} alt={publication.title} />
+        )}
         <div className={style.cardText}>
           <small>Publicado: {format(publication.date, "PP")}</small>
           <h3>{publication.title}</h3>
           <p>{publication.description}</p>
-          {publication.isEvent && <small className={style.eventDate}>Evento: {format(publication.eventDate, "PP")}</small>}
+          {publication.isEvent && (
+            <small className={style.eventDate}>Evento: {format(publication.eventDate, "PP")}</small>
+          )}
         </div>
         <div className={style.cardFooter}>
           <div className={style.types}>
-              <span >{publication.type}</span>
-              {publication.isEvent && <span>&nbsp;/ EVENTO</span>}
+            <span>{publication.type}</span>
+            {publication.isEvent && <span>&nbsp;/ EVENTO</span>}
           </div>
           <p>LEER MÁS</p>
         </div>
@@ -146,7 +164,7 @@ export default function Publication({ publication, complex, authUser, handleForm
   ) : (
     <div className={style.card}>
       <Link
-        to={`/alojamientos/${complex.name}`}
+        to={`/alojamientos/${complex.id}`}
         target={location.pathname === "/dashboard" ? "_blank" : "_self"}
         className={style.data}
       >

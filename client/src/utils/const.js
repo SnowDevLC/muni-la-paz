@@ -1,8 +1,8 @@
 export const contacts = [
   {
     title: 'Municipalidad de la Paz',
-    phone: '496-010',
-    email: 'municipalidadelapaz@hotmail.com'
+    phone: 'concejal',
+    email: '/img/team/concejal.webp'
   },
   {
     title: 'Acción Social y Oficina de Empleo',
@@ -36,5 +36,53 @@ export const contacts = [
     title: 'Bomberos Voluntarios',
     phone: '496-600',
     whatsapp: '3544-536590'
+  },
+];
+
+export const councilors = [
+  {
+    name: 'Concejal 1',
+    position: 'concejal',
+    img: '/img/team/concejal.webp'
+  },
+  {
+    name: 'Concejala 2',
+    position: 'concejal',
+    img: '/img/team/concejal.webp'
+  },
+  {
+    name: 'Concejal 3',
+    position: 'concejal',
+    img: '/img/team/concejal.webp'
+  },
+  {
+    name: 'Concejala 4',
+    position: 'concejal',
+    img: '/img/team/concejal.webp'
+  },
+  {
+    name: 'Concejal 5',
+    position: 'concejal',
+    img: '/img/team/concejal.webp'
+  },
+  {
+    name: 'Concejal 6',
+    position: 'concejal',
+    img: '/img/team/concejal.webp'
+  },
+  {
+    name: 'Concejala 7',
+    position: 'concejal',
+    img: '/img/team/concejal.webp'
+  },
+  {
+    name: 'Concejal 8',
+    position: 'concejal',
+    img: '/img/team/concejal.webp'
+  },
+  {
+    name: 'Concejal 9',
+    position: 'concejal',
+    img: '/img/team/concejal.webp'
   },
 ];

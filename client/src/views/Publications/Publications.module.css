@@ -118,6 +118,43 @@
   gap: 2rem;
 }
 
+/*--- VIEW CONCEJO ---*/
+.councilors {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  gap: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+
+  .titleCouncil {
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  .gridCouncilors {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(250px, 250px));
+      justify-content: center;
+      gap: 2rem;
+    
+
+    .councilor {
+      background: white;
+      width: 250px;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      .imgCouncilor {
+        width: 150px;
+      }
+    }
+  }
+}
+
 
 /*---MEDIIA QUERIES---*/
 
@@ -133,6 +170,12 @@
 
   .imgHeader {
     min-height: 300px;
+  }
+
+  .councilors {    
+    .gridCouncilors {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
+    }
   }
 }
 
@@ -170,5 +213,9 @@
     width: 80%;
     grid-template-columns: repeat(auto-fit, minmax(280px, 280px));
     justify-content: center;
+  }
+
+  .councilors {    
+    width: 80%;
   }
 }
