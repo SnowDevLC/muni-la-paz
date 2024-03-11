@@ -1,8 +1,8 @@
 export const contacts = [
   {
     title: 'Municipalidad de la Paz',
-    phone: 'concejal',
-    email: '/img/team/concejal.webp'
+    phone: '3544-496010',
+    email: 'municipalidadelapaz@hotmail.com'
   },
   {
     title: 'Acción Social y Oficina de Empleo',
@@ -12,7 +12,7 @@ export const contacts = [
   {
     title: 'Reclamos Agua - 8:00 a 13:00',
     phone: '3544-496010',
-    title2:"Fuera del Horario",
+    title2:"Fuera de Horario",
     phone2:" 3544-651480"
   },
   {
@@ -30,11 +30,11 @@ export const contacts = [
   },
   {
     title: 'Comisaria La Paz',
-    phone: '496-600',
+    phone: '3544-496600',
   },
   {
     title: 'Bomberos Voluntarios',
-    phone: '496-600',
+    phone: '3544-496600',
     whatsapp: '3544-536590'
   },
 ];
@@ -85,4 +85,27 @@ export const councilors = [
     position: 'concejal',
     img: '/img/team/concejal.webp'
   },
+];
+
+export const institutional = [
+  {
+    name: 'Intendente',
+    position: 'Intendente',
+    img: '/img/team/person3.webp'
+  },
+  {
+    name: 'Persona',
+    position: 'Persona',
+    img: '/img/team/person4.webp'
+  },
+  {
+    name: 'Persona',
+    position: 'Persona',
+    img: '/img/team/person5.webp'
+  },
+  {
+    name: 'Persona',
+    position: 'Persona',
+    img: '/img/team/concejal.webp'
+  }
 ];

@@ -6,7 +6,7 @@ import { Pagination, Publication, SearchBar } from "../../components";
 import { filteredPublications, setCurrentPage } from "../../redux/actions";
 import usePaginate from "../../hooks/usePaginate";
 import { Link, useLocation } from "react-router-dom";
-import { councilors } from "../../utils/const";
+import { councilors, institutional } from "../../utils/const";
 
 export default function Publications({ items }) {
   const { currentView, currentViewItems } = usePaginate(items);
@@ -14,8 +14,6 @@ export default function Publications({ items }) {
   const publications = currentView || currentViewItems;
 
   const location = useLocation();
-
-  const url = window.location.href;
 
   const [filters, setFilters] = useState({
     type: "TODAS LAS CATEGORIAS",
@@ -92,6 +90,34 @@ export default function Publications({ items }) {
           </div>
         </>
       )}
+      {location.pathname === "/institucional" && (
+        <>
+          <nav className={style.navTitles}>
+            <Link to="/">Home</Link>
+            <span>Institucional</span>
+          </nav>
+          <div className={style.councilors}>
+            {/* <h1 className={style.titleCouncil}>Concejales y Concejalas</h1> */}
+            <div className={style.gridInstitutional}>
+              {institutional?.map((councilor, index) => (
+                <div key={index} className={style.councilor}>
+                  <div className={style.imgCircle}>
+                    <img className={style.imgCouncilor} src={councilor.img} alt={councilor.name} />
+                  </div>
+                  <p>{councilor.name}</p>
+                  <p>{councilor.position}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className={style.title}>
+            <h2>
+              Últimas<br></br>
+              <span>Entradas</span>
+            </h2>
+          </div>
+        </>
+      )}
       {location.pathname === "/eventos" && (
         <>
           <header className={style.imgHeader}>
@@ -111,11 +137,57 @@ export default function Publications({ items }) {
           </div>
         </>
       )}
-      {location.pathname === "/turismo" && (
+      {location.pathname === "/deportes" && (
         <>
+          <nav className={style.navTitles}>
+            <Link to="/">Home</Link>
+            <span>Deportes</span>
+          </nav>
           <div className={style.title}>
             <h2>
-              Todas<br></br>
+              Todo<br></br>
+              <span>Sobre Deportes</span>
+            </h2>
+          </div>
+        </>
+      )}
+      {location.pathname === "/salud" && (
+        <>
+          <nav className={style.navTitles}>
+            <Link to="/">Home</Link>
+            <span>Salud</span>
+          </nav>
+          <div className={style.title}>
+            <h2>
+              Todas las Noticias<br></br>
+              <span>Sobre Salud</span>
+            </h2>
+          </div>
+        </>
+      )}
+      {location.pathname === "/cultura" && (
+        <>
+          <nav className={style.navTitles}>
+            <Link to="/">Home</Link>
+            <span>Cultura</span>
+          </nav>
+          <div className={style.title}>
+            <h2>
+              Cultura<br></br>
+              <span>Las Noticias</span>
+            </h2>
+          </div>
+        </>
+      )}
+      {location.pathname === "/servicios" && (
+        <>
+          <nav className={style.navTitles}>
+            <Link to="/">Home</Link>
+            <span>Servicios</span>
+          </nav>
+          <div className={style.title}>
+            <h2>
+              Servicios<br></br>
               <span>Las Noticias</span>
             </h2>
           </div>

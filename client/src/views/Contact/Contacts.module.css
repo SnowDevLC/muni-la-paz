@@ -1,8 +1,62 @@
-.generalContainer {
-  padding-top: 100px;
+.container {
+  margin-top: 100px;
+}
+
+.imgHeader {
+  width: 100%;
+  min-height: 400px;
+  background-image: url("/img/telefonos.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
-  flex-wrap: wrap;
-  width: 70%;
-  margin: auto;
+  align-items: center;
   justify-content: center;
+
+  .titleHeader {
+    color: white;
+    filter: drop-shadow(0 0 5px black);
+    font-size: 1.75rem;
+  }
+}
+
+.grid {
+  margin: 1rem auto;
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(400px, 400px));
+  justify-content: center;
+  gap: 1rem;
+}
+
+
+/*---MEDIIA QUERIES---*/
+
+@media screen and (max-width: 850px) {
+  .imgHeader {
+    min-height: 300px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    margin-top: 70px;
+  }
+
+  .imgHeader {
+    min-height: 200px;
+  
+    .titleHeader {
+      font-size: 1rem;
+    }
+  }
+
+  .grid {
+    width: 90%;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 350px));
+  }
 }
