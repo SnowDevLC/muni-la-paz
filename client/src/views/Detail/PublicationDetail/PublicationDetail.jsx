@@ -7,12 +7,19 @@ import usePublication from "../../../hooks/usePublication";
 import style from "./PublicationDetail.module.css";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { useSelector } from "react-redux";
+import { Publication } from "../../../components";
 const { VITE_BACKEND_URL } = import.meta.env;
+
 
 export default function PublicationDetail() {
   const publication = usePublication();
 
   const url = window.location.href;
+
+  const allPublications = useSelector((state) => state.publications);
+
+  const publications = allPublications.filter((publication) => publication.check).slice(0, 3);
 
   const [showPopup, setShowPopup] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
@@ -37,6 +44,10 @@ export default function PublicationDetail() {
     setSelectedImage(VITE_BACKEND_URL + publication.images[newIndex]);
   };
 
+  const openPdf = (pdf) => {
+    window.open(pdf, '_blank');
+  };
+
   return (
     publication && (
       <div className={style.container}>
@@ -55,36 +66,45 @@ export default function PublicationDetail() {
         </nav>
         <div className={style.contentComplex}>
           <div className={style.dataLeft}>
-            <div className={style.images}>
-              {publication?.images && publication.images.length > 0 && (
-                <img
-                  onClick={() => handleImageClick(VITE_BACKEND_URL + publication.images[0])}
-                  src={VITE_BACKEND_URL + publication.images[0]}
-                  alt={publication.title + "image"}
-                />
-              )}
-              {publication?.images && publication.images.length > 1 && (
-                <div className={style.imagesSmall}>
-                  {publication?.images.map(
-                    (image, index) =>
-                      index > 0 &&
-                      index < 4 && (
-                        <img
-                          key={index}
-                          onClick={() => handleImageClick(VITE_BACKEND_URL + image)}
-                          src={VITE_BACKEND_URL + image}
-                          alt={publication.title + "image" + index}
-                        />
-                      )
-                  )}
-                </div>
-              )}
-              {publication?.images && publication.images.length > 1 && (
-                <button onClick={() => handleImageClick(VITE_BACKEND_URL + publication.images[0])}>
-                  Ver Galería de Fotos
-                </button>
-              )}
-            </div>
+            {publication.type === "Concejo" ? (
+              <div className={style.pdfContainer}>
+                <embed src={VITE_BACKEND_URL + publication.images[0]} type="application/pdf" className={style.pdf}/>
+                <button onClick={()=>openPdf(VITE_BACKEND_URL + publication.images[0])}>
+                    Ver PDF
+                  </button>
+              </div>
+            ) : (
+              <div className={style.images}>
+                {publication?.images && publication.images.length > 0 && (
+                  <img
+                    onClick={() => handleImageClick(VITE_BACKEND_URL + publication.images[0])}
+                    src={VITE_BACKEND_URL + publication.images[0]}
+                    alt={publication.title + "image"}
+                  />
+                )}
+                {publication?.images && publication.images.length > 1 && (
+                  <div className={style.imagesSmall}>
+                    {publication?.images.map(
+                      (image, index) =>
+                        index > 0 &&
+                        index < 4 && (
+                          <img
+                            key={index}
+                            onClick={() => handleImageClick(VITE_BACKEND_URL + image)}
+                            src={VITE_BACKEND_URL + image}
+                            alt={publication.title + "image" + index}
+                          />
+                        )
+                    )}
+                  </div>
+                )}
+                {publication?.images && publication.images.length > 1 && (
+                  <button onClick={() => handleImageClick(VITE_BACKEND_URL + publication.images[0])}>
+                    Ver Galería de Fotos
+                  </button>
+                )}
+              </div>
+            )}
             <div className={style.text}>
               <div className={style.dates}>
                 <small>Publicado: {format(publication.date, "PPPP")}</small>
@@ -118,8 +138,19 @@ export default function PublicationDetail() {
           </div>
 
           <div className={style.dataRight}>
-            <div className={style.map}></div>
-            <div className={style.data}></div>
+            <div className={style.lastNotices}>
+              <div className={style.title}>
+                <h2>
+                  Últimas<br></br>
+                  <span className={style.span}>Noticias</span>
+                </h2>
+              </div>
+              <div className={style.gridLastNotices}>
+                {publications?.map(
+                  (publi, index) => publi.id !== publication.id && <Publication key={index} publication={publi} />
+                )}
+              </div>
+            </div>
           </div>
         </div>
         {showPopup && (
