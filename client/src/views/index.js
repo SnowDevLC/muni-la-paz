@@ -6,5 +6,6 @@ import Complexes from './Complexes/Complexes';
 import Publications from './Publications/Publications';
 import ComplexDetail from './Detail/ComplexDetail/ComplexDetail';
 import PublicationDetail from './Detail/PublicationDetail/PublicationDetail';
+import Tourism from './Tourism/Tourism';
 
-export { Home, Contacts, Login, Dashboard, Complexes, Publications, ComplexDetail, PublicationDetail };
+export { Home, Contacts, Login, Dashboard, Complexes, Publications, ComplexDetail, PublicationDetail, Tourism };

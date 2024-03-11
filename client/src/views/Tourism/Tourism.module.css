@@ -1,15 +1,16 @@
 .container {
   margin-top: 100px;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 1rem;
 }
 
 .imgHeader {
   width: 100%;
   min-height: 400px;
-  background-image: url("/img/alojamiento.webp");
+  background-image: url("/img/turismo.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -20,16 +21,18 @@
   .titleHeader {
     color: white;
     filter: drop-shadow(0 0 5px black);
-    font-size: 1.75rem;
+    font-size: 1.25rem;
+    text-align: center;
+    padding: 1rem;
   }
 }
 
 .navTitles {
-  margin-top: 1rem;
   width: 80%;
   display: flex;
   align-items: start;
   gap: 0.5rem;
+
 
   a {
     color: var(--main-text-color);
@@ -48,51 +51,51 @@
   }
 }
 
-.title {
+.section {
   width: 80%;
   display: flex;
   flex-direction: column;
-  margin: 1rem 0;
-  align-items: start;
-  & h2 {
-    font-size: 38px;
-    font-weight: 500;
-    line-height: 30px;
-  }
-  & span {
-    font-size: 30px;
-    font-weight: 400;
-  }
-} 
+  border-top: 1px solid var(--main-text-color);
+  padding-top: 1rem;
 
-.search {
-  min-width: 20%;
+  .titlePublications {
+    display: flex;
+    flex-direction: column;
+    & h2 {
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 22px;
+    }
+    & span {
+      font-size: 22px;
+      font-weight: 400;
+    }
+    & a {
+      margin-left: auto;
+      color: var(--main-text-color);
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      &:hover {
+        color: var(--card-link-hover-color);
+      }
+    }
+  }
 }
 
 .grid {
-  width: 70%;
-  padding: 2rem 0;
+  width: 90%;
+  margin: 1rem auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
-  justify-content: space-between;
-  gap: 2rem;
+  justify-content: center;
+  gap: 1.5rem;
 }
-
-
 
 
 /*---MEDIIA QUERIES---*/
 
-@media screen and (max-width: 1188px) {
-
-  .grid {
-    justify-content: center;
-  }
-
-  .imgHeader {
-    min-height: 300px;
-  }
-}
 
 @media screen and (max-width: 600px) {
   .container {
@@ -103,7 +106,7 @@
     min-height: 200px;
   
     .titleHeader {
-      font-size: 1.75rem;
+      font-size: .75rem;
     }
   }
 
@@ -119,8 +122,6 @@
   }
 
   .grid {
-    width: 80%;
     grid-template-columns: repeat(auto-fit, minmax(280px, 280px));
-    justify-content: center;
   }
 }

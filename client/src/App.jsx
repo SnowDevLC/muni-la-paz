@@ -1,6 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { NavBar, Footer } from "./components";
-import { Contacts, Home, Publications, Login, Dashboard, Complexes, ComplexDetail, PublicationDetail } from "./views";
+import { Contacts, Home, Publications, Login, Dashboard, Complexes, ComplexDetail, PublicationDetail, Tourism } from "./views";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getComplexes, getPublications } from "./redux/actions";
@@ -50,7 +50,7 @@ function App() {
         <Route exact path="/deportes" element={<Publications items={sports} />} />
         <Route exact path="/eventos" element={<Publications items={events} />} />
         <Route exact path="/servicios" element={<Publications items={services} />} />
-        <Route exact path="/turismo" element={<Publications items={tourism} />} />
+        <Route exact path="/turismo" element={<Tourism items={tourism} events={events} complexes={allComplexes}/>} />
         <Route exact path="/institucional" element={<Publications items={institutional} />} />
         <Route exact path="/concejo" element={<Publications items={advice} />} />
         <Route

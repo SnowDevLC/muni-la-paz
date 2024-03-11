@@ -19,7 +19,7 @@ export default function Complexes({ complexes }) {
     <div className={style.container}>
       <header className={style.imgHeader}>
         <div className={style.titleHeader}>
-          <h2>Alojamientos</h2>
+          <h1>Alojamientos</h1>
         </div>
       </header>
       <nav className={style.navTitles}>

@@ -8,18 +8,39 @@ const ContactCard = ({ contact }) => {
   const { title, phone, whatsapp, email, title2, phone2 } = contact;
   return (
     <div className={style.card}>
-      <h1 className={style.title}>{title}</h1>
-      <h2 className={style.subtitle}>
-        <BsFillTelephoneFill /> {phone && <a href={`tel:${phone}`}>{phone}</a>}
-      </h2>
-      <h1 className={style.title}>{title2}</h1>
-      <h2 className={style.subtitle}>
-         {phone2 && (<> <BsFillTelephoneFill />
-         <a href={`tel:${phone2}`}>{phone2}</a>
-        </>)}
-      </h2>
-      {whatsapp && <a href={`https://wa.me/${whatsapp}`} target="blank" className={style.subtitle}><FaWhatsapp /> {whatsapp}</a>}
-      {email && <h2 className={style.subtitle}><AiOutlineMail /> <a href={`mailto:${email}`}>{email}</a></h2>}
+      <h2 className={style.title}>{title}</h2>
+      <div className={style.data}>
+        <p className={style.contact}>
+          <BsFillTelephoneFill /> {phone && <a href={`tel:${phone}`}>{phone}</a>}
+        </p>
+        {whatsapp && (
+          <p className={style.contact}>
+            <FaWhatsapp />
+            <a href={`https://wa.me/${whatsapp}`} target="blank">
+              {whatsapp}
+            </a>
+          </p>
+        )}
+        {email && (
+          <p className={style.contact}>
+            <AiOutlineMail /> <a href={`mailto:${email}`}>{email}</a>
+          </p>
+        )}
+      </div>
+      {title2 && (
+        <>
+          <h2 className={style.title2}>{title2}</h2>
+          <p className={style.contact}>
+            {phone2 && (
+              <>
+                {" "}
+                <BsFillTelephoneFill />
+                <a href={`tel:${phone2}`}>{phone2}</a>
+              </>
+            )}
+          </p>
+        </>
+      )}
     </div>
   );
 };
