@@ -5,7 +5,6 @@ import { MdOutlineMail } from "react-icons/md";
 import useComplex from "../../../hooks/useComplex";
 import style from "./ComplexDetail.module.css";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
 const { VITE_BACKEND_URL, VITE_GOOGLE_MAPS_API_KEY } = import.meta.env;
 
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
@@ -48,12 +47,6 @@ const ComplexDetail = () => {
   return (
     complex && (
       <div className={style.container}>
-        <Helmet>
-          <meta property="og:title" content={complex.name} />
-          <meta property="og:description" content={complex.description} />
-          <meta property="og:image" content={VITE_BACKEND_URL + complex.images[0]} />
-          <meta property="og:url" content={url} />
-        </Helmet>
         <nav className={style.navTitles}>
           <Link to="/">Home</Link>
           <Link to="/alojamientos" className={style.beforeLink}>

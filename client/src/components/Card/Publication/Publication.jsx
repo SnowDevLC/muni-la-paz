@@ -101,7 +101,7 @@ export default function Publication({ publication, complex, authUser, handleForm
   return publication ? (
     <div className={style.card}>
       <Link
-        to={`/noticia/${publication.id}`}
+        to={`/noticia/${publication.id}/${publication.title}`}
         target={location.pathname === "/dashboard" ? "_blank" : "_self"}
         className={style.data}
       >
@@ -164,7 +164,7 @@ export default function Publication({ publication, complex, authUser, handleForm
   ) : (
     <div className={style.card}>
       <Link
-        to={`/alojamientos/${complex.id}`}
+        to={`/alojamientos/${complex.id}/${complex.name}`}
         target={location.pathname === "/dashboard" ? "_blank" : "_self"}
         className={style.data}
       >

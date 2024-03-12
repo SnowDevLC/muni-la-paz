@@ -118,6 +118,12 @@
 }
 
 /*--- VIEW CONCEJO ---*/
+
+.border {
+  border-top: 1px solid;
+  padding-top: 1rem;
+}
+
 .councilors {
   display: flex;
   flex-direction: column;
@@ -131,11 +137,12 @@
     font-weight: 500;
   }
 
-  .gridInstitutional {
+  .gridInstitutional, .gridCouncilors {
     display: grid;
     grid-template-columns: repeat(4, minmax(300px, 300px));
     justify-content: center;
     gap: 2rem;
+    margin-bottom: 1rem;
 
     .councilor {
       background: white;
@@ -158,30 +165,17 @@
       }
     }
   }
-
-  .gridCouncilors {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(250px, 250px));
-    justify-content: center;
-    gap: 2rem;
-
-    .councilor {
-      background: white;
-      width: 250px;
-      height: 250px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      .imgCouncilor {
-        width: 150px;
-      }
-    }
-  }
 }
 
 /*---MEDIIA QUERIES---*/
+
+@media screen and (max-width: 1315px) {
+  .councilors {
+    .gridInstitutional, .gridCouncilors {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+    }
+  }
+}
 
 @media screen and (max-width: 1188px) {
   .filters {
@@ -195,16 +189,6 @@
 
   .imgHeader {
     min-height: 300px;
-  }
-
-  .councilors {
-    .gridCouncilors {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
-    }
-
-    .gridInstitutional {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
-    }
   }
 }
 

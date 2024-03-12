@@ -6,7 +6,6 @@ setDefaultOptions({ locale: es });
 import usePublication from "../../../hooks/usePublication";
 import style from "./PublicationDetail.module.css";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import { useSelector } from "react-redux";
 import { Publication } from "../../../components";
 const { VITE_BACKEND_URL } = import.meta.env;
@@ -51,12 +50,6 @@ export default function PublicationDetail() {
   return (
     publication && (
       <div className={style.container}>
-        <Helmet>
-          <meta property="og:title" content={publication.title} />
-          <meta property="og:description" content={publication.description} />
-          <meta property="og:image" content={VITE_BACKEND_URL + publication.images[0]} />
-          <meta property="og:url" content={url} />
-        </Helmet>
         <nav className={style.navTitles}>
           <Link to="/">Home</Link>
           <Link to="/noticias" className={style.beforeLink}>
