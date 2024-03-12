@@ -41,71 +41,89 @@ export const contacts = [
 
 export const councilors = [
   {
-    name: 'Concejal 1',
-    position: 'concejal',
-    img: '/img/team/concejal.webp'
+    name: 'Silvia Martinez',
+    position: 'Concejal - Presidente H.C.D',
+    img: '/img/team/SilviaMartinez.webp'
   },
   {
-    name: 'Concejala 2',
-    position: 'concejal',
-    img: '/img/team/concejal.webp'
+    name: 'Dario Guardia',
+    position: 'Concejal - Vice Presidente H.C.D',
+    img: '/img/team/DarioGuardia.webp'
   },
   {
-    name: 'Concejal 3',
-    position: 'concejal',
-    img: '/img/team/concejal.webp'
+    name: 'Teresita Velazquez',
+    position: 'Concejal - Vice Presidente 1era',
+    img: '/img/team/TeresitaVelazquez.webp'
   },
   {
-    name: 'Concejala 4',
-    position: 'concejal',
-    img: '/img/team/concejal.webp'
+    name: 'Veronica Andrada',
+    position: 'Secretaria H.C.D',
+    img: '/img/team/VeronicaAndrada.webp'
   },
   {
-    name: 'Concejal 5',
-    position: 'concejal',
-    img: '/img/team/concejal.webp'
+    name: 'Analia Perez',
+    position: 'Concejal',
+    img: '/img/team/AnaliaPerez.webp'
   },
   {
-    name: 'Concejal 6',
-    position: 'concejal',
-    img: '/img/team/concejal.webp'
+    name: 'Analia Arana',
+    position: 'Concejal',
+    img: '/img/team/AnaliaArana.webp'
   },
   {
-    name: 'Concejala 7',
-    position: 'concejal',
-    img: '/img/team/concejal.webp'
+    name: 'Misael Ludueña',
+    position: 'Concejal',
+    img: '/img/team/MisaelLudueña.webp'
   },
   {
-    name: 'Concejal 8',
-    position: 'concejal',
-    img: '/img/team/concejal.webp'
+    name: 'Mariano Villegas',
+    position: 'Concejal',
+    img: '/img/team/MarianoVillegas.webp'
+  },
+];
+
+export const court = [
+  {
+    name: 'Lorenzo Brito',
+    position: 'Presidente H.T.D.C',
+    img: '/img/team/LorenzoBrito.webp'
   },
   {
-    name: 'Concejal 9',
-    position: 'concejal',
-    img: '/img/team/concejal.webp'
+    name: 'Carolina Bequis',
+    position: 'Vice Presidente H.T.D.C',
+    img: '/img/team/CarolinaBequis.webp'
   },
+  {
+    name: 'Virginia Ochoa',
+    position: 'Secretaria H.T.D.C',
+    img: '/img/team/VirginiaOchoa.webp'
+  },
+  {
+    name: 'Marcela Guardia',
+    position: 'Vocal H.T.D.C',
+    img: '/img/team/MarcelaGuardia.webp'
+  }
 ];
 
 export const institutional = [
   {
-    name: 'Intendente',
-    position: 'Intendente',
-    img: '/img/team/person3.webp'
+    name: 'Ramon Rufino Funes',
+    position: 'Intendente Municipal',
+    img: '/img/team/RamonRufinoFunes.webp'
   },
   {
-    name: 'Persona',
-    position: 'Persona',
-    img: '/img/team/person4.webp'
+    name: 'Carlos Gustavo Hachuel',
+    position: 'Secretaría General',
+    img: '/img/team/CarlosGustavoHachuel.webp'
   },
   {
-    name: 'Persona',
-    position: 'Persona',
-    img: '/img/team/person5.webp'
+    name: 'Franco Suau',
+    position: 'Secretaría de Hacienda',
+    img: '/img/team/SuauFranco.webp'
   },
   {
-    name: 'Persona',
-    position: 'Persona',
+    name: 'Gabriel Hernan Paulik',
+    position: 'Secretaría de Gobierno',
     img: '/img/team/concejal.webp'
   }
 ];

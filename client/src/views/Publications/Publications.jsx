@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Helmet } from "react-helmet";
 import style from "./Publications.module.css";
 import { Pagination, Publication, SearchBar } from "../../components";
 import { filteredPublications, setCurrentPage } from "../../redux/actions";
 import usePaginate from "../../hooks/usePaginate";
 import { Link, useLocation } from "react-router-dom";
-import { councilors, institutional } from "../../utils/const";
+import { councilors, court, institutional } from "../../utils/const";
 
 export default function Publications({ items }) {
   const { currentView, currentViewItems } = usePaginate(items);
@@ -72,12 +71,29 @@ export default function Publications({ items }) {
             <span>Concejo Deliberante</span>
           </nav>
           <div className={style.councilors}>
-            <h1 className={style.titleCouncil}>Concejales y Concejalas</h1>
+            <h1 className={style.titleCouncil}>Honorable Concejo Deliberante</h1>
             <div className={style.gridCouncilors}>
               {councilors?.map((councilor, index) => (
                 <div key={index} className={style.councilor}>
-                  <img className={style.imgCouncilor} src={councilor.img} alt={councilor.name} />
+                  <div className={style.imgCircle}>
+                    <img className={style.imgCouncilor} src={councilor.img} alt={councilor.name} />
+                  </div>
                   <p>{councilor.name}</p>
+                  <p>{councilor.position}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className={`${style.councilors} ${style.border}`}>
+            <h1 className={style.titleCouncil}>Honorable Tribunal de Cuentas</h1>
+            <div className={style.gridCouncilors}>
+              {court?.map((councilor, index) => (
+                <div key={index} className={style.councilor}>
+                  <div className={style.imgCircle}>
+                    <img className={style.imgCouncilor} src={councilor.img} alt={councilor.name} />
+                  </div>
+                  <p>{councilor.name}</p>
+                  <p>{councilor.position}</p>
                 </div>
               ))}
             </div>
@@ -195,11 +211,6 @@ export default function Publications({ items }) {
       )}
       {location.pathname === "/noticias" && (
         <>
-          <Helmet>
-            <meta property="og:title" content="Noticias - Municipalidad de La Paz" />
-            <meta property="og:description" content="Todas las Noticias de la Localidad de La Paz" />
-            <meta property="og:url" content={`https://muni-la-paz.vercel.app/noticias`} />
-          </Helmet>
           <nav className={style.navTitles}>
             <Link to="/">Home</Link>
             <span>Noticias</span>
