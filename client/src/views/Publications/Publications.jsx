@@ -78,8 +78,8 @@ export default function Publications({ items }) {
                   <div className={style.imgCircle}>
                     <img className={style.imgCouncilor} src={councilor.img} alt={councilor.name} />
                   </div>
-                  <p>{councilor.name}</p>
-                  <p>{councilor.position}</p>
+                  <p className={style.name}>{councilor.name}</p>
+                  <p className={style.position}>{councilor.position}</p>
                 </div>
               ))}
             </div>
@@ -92,8 +92,8 @@ export default function Publications({ items }) {
                   <div className={style.imgCircle}>
                     <img className={style.imgCouncilor} src={councilor.img} alt={councilor.name} />
                   </div>
-                  <p>{councilor.name}</p>
-                  <p>{councilor.position}</p>
+                  <p className={style.name}>{councilor.name}</p>
+                  <p className={style.position}>{councilor.position}</p>
                 </div>
               ))}
             </div>
@@ -120,8 +120,8 @@ export default function Publications({ items }) {
                   <div className={style.imgCircle}>
                     <img className={style.imgCouncilor} src={councilor.img} alt={councilor.name} />
                   </div>
-                  <p>{councilor.name}</p>
-                  <p>{councilor.position}</p>
+                  <p className={style.name}>{councilor.name}</p>
+                  <p className={style.position}>{councilor.position}</p>
                 </div>
               ))}
             </div>
