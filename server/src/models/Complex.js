@@ -15,18 +15,22 @@ module.exports = (sequelize) => {
     description: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: ""
     },
     address: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: ""
     },
     lat:{
       type: DataTypes.FLOAT,
       allowNull: false,
+      defaultValue: -32.2172425800549
     },
     lng:{
       type: DataTypes.FLOAT,
       allowNull: false,
+      defaultValue: -65.04836357980413
     },
     images: {
       type: DataTypes.ARRAY(DataTypes.STRING),
@@ -35,6 +39,7 @@ module.exports = (sequelize) => {
     tel:{
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: ""
     },
     instagram:{
       type: DataTypes.STRING,

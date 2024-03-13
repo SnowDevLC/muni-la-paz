@@ -10,8 +10,8 @@
     },
     {
       "name": "Bruno Gimenez",
-      "email": "usuario2@example.com",
-      "password": "$2b$10$VM0fk.QWcmFxF55JDrBp..oQ6H1O36PkT14Qij8yQ.OOEKAYlZnoG",
+      "email": "brunogimenez389@gmail.com",
+      "password": "$2b$10$oGygqhwliATRxNTQ2m9hYOvj67ANlDOpNNwUhfKH6K.6D.aKwjah6",
       "rol": "Admin",
       "active": true,
       "passwordChanged": true
@@ -140,6 +140,19 @@
     }
   ],
   "complexes": [
+    {
+      "name": "Cabañas Don Esteban",
+      "description": "",
+      "lat": -32.2184447058933,
+      "lng": -65.02374102023371,
+      "address": "",
+      "images": ["/public/images/complexes/4/don-esteban1.webp", "/public/images/complexes/4/don-esteban2.webp", "/public/images/complexes/4/don-esteban3.webp", "/public/images/complexes/4/don-esteban4.webp"],
+      "tel":"",
+      "instagram": "",
+      "email": "jorgeestebanprieto@yahoo.com.ar",
+      "web": "",
+      "check": true
+    },
     {
       "name": "Complejo Cerro Loma Bola",
       "description": "Complejo Cerro Loma Bola chalets & piscina. ¡Abierto todo el año!. Confortables chalets de 80mts2, 2 dormitorios, todos los servicios. PRECIOS PROMOCIONALES TODO EL AÑO.",
