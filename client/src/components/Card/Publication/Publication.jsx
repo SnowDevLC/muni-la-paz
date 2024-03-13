@@ -101,7 +101,7 @@ export default function Publication({ publication, complex, authUser, handleForm
   return publication ? (
     <div className={style.card}>
       <Link
-        to={`/noticia/${publication.id}/${publication.title}`}
+        to={`/noticia/${publication.id}/${encodeURIComponent(publication.title).replace(/%20/g, '-')}`}
         target={location.pathname === "/dashboard" ? "_blank" : "_self"}
         className={style.data}
       >
@@ -164,7 +164,7 @@ export default function Publication({ publication, complex, authUser, handleForm
   ) : (
     <div className={style.card}>
       <Link
-        to={`/alojamientos/${complex.id}/${complex.name}`}
+        to={`/alojamientos/${complex.id}/${encodeURIComponent(complex.name).replace(/%20/g, '-')}`}
         target={location.pathname === "/dashboard" ? "_blank" : "_self"}
         className={style.data}
       >

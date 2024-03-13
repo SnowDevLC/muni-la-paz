@@ -1,7 +1,7 @@
 import style from "./Contacts.module.css";
 import { Contact } from "../../components";
 
-import { contacts } from "../../utils/const";
+import { contacts } from "../../assets/data";
 
 const Contacts = () => {
   return (

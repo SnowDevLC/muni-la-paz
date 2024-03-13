@@ -52,6 +52,10 @@ main {
 .notices {
   width: 70%;
   margin: 5rem auto;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .titlePublications {
@@ -120,17 +124,17 @@ main {
       }
       & h3 {
         font-size: 30px;
-        font-weight: 500;
+        font-weight: 600;
         margin: 1rem 0;
         color: var(--card-title-color);
         transition: 0.3s;
-        &:hover {
-          color: var(--card-link-hover-color);
-        }
       }
       & p {
         margin: 0;
         max-height: 5.6rem;
+        font-weight: 500;
+        font-size: 20px;
+        color: var(--main-text-color);
         overflow: hidden;
         display: -webkit-box;
         -webkit-line-clamp: 4;
@@ -146,6 +150,15 @@ main {
       transition: 0.3s;
       &:hover {
         background-color: var(--button-hover-color);
+      }
+    }
+  }
+  &:hover {
+    & .firstNoticeText {
+      & .firstNoticeTextTop {
+        h3 {
+          color: var(--card-link-hover-color);
+        }
       }
     }
   }

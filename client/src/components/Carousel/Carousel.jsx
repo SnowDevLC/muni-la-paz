@@ -2,7 +2,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, A11y, Autoplay } from 'swiper/modules';
 
-import { data } from "../../assets/data";
+import { imagesCarrousel } from "../../assets/data";
 import style from "./Carousel.module.css";
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -19,7 +19,7 @@ export default function Carousel() {
         
       }}
     >
-      {data?.map((slide, index) => (
+      {imagesCarrousel?.map((slide, index) => (
         <SwiperSlide key={index}>
           <img src={slide.src} alt={`Slide${index}`} className={style.slideImg}/>
         </SwiperSlide>
