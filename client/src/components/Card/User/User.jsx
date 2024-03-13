@@ -1,5 +1,5 @@
 import React from "react";
-import { MdEdit, MdDelete, MdCheck } from "react-icons/md";
+import { MdEdit, MdDelete, MdCheck, MdPassword } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import Swal from "sweetalert2";
 import axios from "axios";
@@ -10,7 +10,6 @@ import style from "./User.module.css";
 import { useDispatch } from "react-redux";
 
 const User = ({ user, authUser, handleForm }) => {
-
   const dispatch = useDispatch();
 
   const handleActive = (value) => {
@@ -65,6 +64,33 @@ const User = ({ user, authUser, handleForm }) => {
     });
   };
 
+  const handleForgottenPassword = (value) => {
+    Swal.fire({
+      title: "Confirmación",
+      text: `Confirma rehabilitar cambio de contraseña`,
+      icon: "warning",
+      showDenyButton: true,
+      confirmButtonText: "Confirmar",
+      denyButtonText: "Cancelar",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        const update = {
+          passwordChanged: value,
+        };
+        try {
+          const response = await axios.patch(`${VITE_BACKEND_URL}/users/${user.id}`, update, {
+            headers: { Authorization: authUser.token },
+          });
+          if (response.status === 200) {
+            dispatch(getUsers(authUser.token));
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    });
+  };
+
   return (
     <div className={style.card}>
       <h3>{user.name}</h3>
@@ -85,6 +111,11 @@ const User = ({ user, authUser, handleForm }) => {
         ) : (
           <button className={`${style.btn} ${style.delete}`} onClick={() => handleActive(false)}>
             <RxCross2 />
+          </button>
+        )}
+        {authUser.rol === "superAdmin" && user.passwordChanged !== false && (
+          <button className={`${style.btn} ${style.password}`} onClick={() => handleForgottenPassword(false)}>
+            <MdPassword />
           </button>
         )}
       </div>

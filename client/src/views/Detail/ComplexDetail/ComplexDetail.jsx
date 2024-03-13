@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaArrowCircleLeft, FaArrowCircleRight, FaWhatsapp, FaFacebook, FaLink } from "react-icons/fa";
+import { FaArrowCircleLeft, FaArrowCircleRight, FaWhatsapp, FaFacebook, FaLink, FaInstagram } from "react-icons/fa";
 import { BsTelephone, BsMap } from "react-icons/bs";
 import { MdOutlineMail } from "react-icons/md";
 import useComplex from "../../../hooks/useComplex";
@@ -136,16 +136,16 @@ const ComplexDetail = () => {
                 <li>
                   <strong>
                     <BsTelephone />
-                    Tel:
+                    Tel/Whatsapp:
                   </strong>{" "}
                   {complex?.tel}
                 </li>
                 <li>
                   <strong>
-                    <FaWhatsapp />
-                    WhatsApp:
+                    <FaInstagram />
+                    Instagram:
                   </strong>{" "}
-                  {complex?.whatsapp}
+                  {complex?.instagram}
                 </li>
                 <li>
                   <strong>

@@ -112,8 +112,6 @@ export default function Publication({ publication, complex, authUser, handleForm
             </Document>
           </div>
         ) : (
-          // <embed className={style.pdf} src={`${pdf}`} type="application/pdf" width="100%" height="100%" />
-          // <img src={VITE_BACKEND_URL + publication.images[0]} alt={publication.title} />
           <img src={VITE_BACKEND_URL + publication.images[0]} alt={publication.title} />
         )}
         <div className={style.cardText}>

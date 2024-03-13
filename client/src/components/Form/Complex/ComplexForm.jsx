@@ -8,7 +8,6 @@ import style from "./ComplexForm.module.css";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 export default function ComplexForm({ complex, authUser }) {
-  
   const [input, setInput] = useState({
     name: complex?.name || "",
     description: complex?.description || "",
@@ -16,11 +15,11 @@ export default function ComplexForm({ complex, authUser }) {
     images: [],
     imagesPreviews: [],
     tel: complex?.tel || "",
-    whatsapp: complex?.whatsapp || "",
+    instagram: complex?.instagram || "",
     email: complex?.email || "",
     web: complex?.web || "",
     lat: complex?.lat || -32.2172425800549,
-    lng: complex?.lng ||  -65.04836357980413
+    lng: complex?.lng || -65.04836357980413,
   });
 
   const handleChange = (e, source) => {
@@ -116,7 +115,7 @@ export default function ComplexForm({ complex, authUser }) {
         formData.append("description", input.description);
         formData.append("address", input.address);
         formData.append("tel", input.tel);
-        formData.append("whatsapp", input.whatsapp);
+        formData.append("instagram", input.instagram);
         formData.append("email", input.email);
         formData.append("web", input.web);
         formData.append("lat", input.lat);
@@ -137,7 +136,7 @@ export default function ComplexForm({ complex, authUser }) {
               imagesPreviews: [],
               address: "",
               tel: "",
-              whatsapp: "",
+              instagram: "",
               email: "",
               web: "",
               lat: -32.2172425800549,
@@ -181,7 +180,7 @@ export default function ComplexForm({ complex, authUser }) {
         formData.append("description", input.description);
         formData.append("address", input.address);
         formData.append("tel", input.tel);
-        formData.append("whatsapp", input.whatsapp);
+        formData.append("instagram", input.instagram);
         formData.append("email", input.email);
         formData.append("web", input.web);
         formData.append("lat", input.lat);
@@ -204,7 +203,7 @@ export default function ComplexForm({ complex, authUser }) {
               imagesPreviews: [],
               address: "",
               tel: "",
-              whatsapp: "",
+              instagram: "",
               email: "",
               web: "",
               lat: -32.2172425800549,
@@ -290,12 +289,12 @@ export default function ComplexForm({ complex, authUser }) {
                 Seleccionar ubicación{" "}
                 <LoadScript googleMapsApiKey={VITE_GOOGLE_MAPS_API_KEY}>
                   <GoogleMap
-                    center={{lat: input.lat, lng: input.lng}}
+                    center={{ lat: input.lat, lng: input.lng }}
                     zoom={15}
                     onClick={(event) => handleChange(event, "map")}
                     mapContainerStyle={{ width: "80%", height: "500px" }}
                   >
-                    <Marker position={{lat: input.lat, lng: input.lng}} />
+                    <Marker position={{ lat: input.lat, lng: input.lng }} />
                   </GoogleMap>
                 </LoadScript>
               </div>
@@ -304,13 +303,13 @@ export default function ComplexForm({ complex, authUser }) {
 
             <div className={style.divInput}>
               <label>
-                Teléfono{" "}
+                Tel/Whatsapp{" "}
                 <input
                   type="phone"
                   name="tel"
                   value={input.tel}
                   onChange={handleChange}
-                  placeholder="Teléfono"
+                  placeholder="Tel/Whatsapp"
                   className={style.inputText}
                 />
               </label>
@@ -320,13 +319,13 @@ export default function ComplexForm({ complex, authUser }) {
 
             <div className={style.divInput}>
               <label>
-                Whatsapp{" "}
+                Instagram{" "}
                 <input
                   type="phone"
-                  name="whatsapp"
-                  value={input.whatsapp}
+                  name="instagram"
+                  value={input.instagram}
                   onChange={handleChange}
-                  placeholder="Whatsapp"
+                  placeholder="Instagram"
                   className={style.inputText}
                 />
               </label>
@@ -454,12 +453,12 @@ export default function ComplexForm({ complex, authUser }) {
                 Seleccionar ubicación{" "}
                 <LoadScript googleMapsApiKey={VITE_GOOGLE_MAPS_API_KEY}>
                   <GoogleMap
-                    center={{lat: input.lat, lng: input.lng}}
+                    center={{ lat: input.lat, lng: input.lng }}
                     zoom={15}
                     onClick={(event) => handleChange(event, "map")}
                     mapContainerStyle={{ width: "80%", height: "500px" }}
                   >
-                    <Marker position={{lat: input.lat, lng: input.lng}} />
+                    <Marker position={{ lat: input.lat, lng: input.lng }} />
                   </GoogleMap>
                 </LoadScript>
               </div>
@@ -468,13 +467,13 @@ export default function ComplexForm({ complex, authUser }) {
 
             <div className={style.divInput}>
               <label>
-                Teléfono{" "}
+                Tel/Whatsapp{" "}
                 <input
                   type="phone"
                   name="tel"
                   value={input.tel}
                   onChange={handleChange}
-                  placeholder="Teléfono"
+                  placeholder="Tel/Whatsapp"
                   className={style.inputText}
                 />
               </label>
@@ -484,13 +483,13 @@ export default function ComplexForm({ complex, authUser }) {
 
             <div className={style.divInput}>
               <label>
-                Whatsapp{" "}
+                Instagram{" "}
                 <input
                   type="phone"
-                  name="whatsapp"
-                  value={input.whatsapp}
+                  name="instagram"
+                  value={input.instagram}
                   onChange={handleChange}
-                  placeholder="Whatsapp"
+                  placeholder="Instagram"
                   className={style.inputText}
                 />
               </label>
