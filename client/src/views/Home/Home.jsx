@@ -66,13 +66,13 @@ export default function Home({ publications, complexes }) {
             Más noticias <FaArrowRight size={25} />
           </Link>
         </div>
-        <Link to={`/noticia/${filteredPublications[0]?.id}/${filteredPublications[0]?.title}`} className={style.firstNotice}>
+        <Link to={`/noticia/${filteredPublications[0]?.id}/${encodeURIComponent(filteredPublications[0]?.title).replace(/%20/g, '-')}`} className={style.firstNotice}>
           <div className={style.firstNoticeImg}>
             <img src={VITE_BACKEND_URL + filteredPublications[0]?.images[0]} alt={filteredPublications[0]?.id} />
           </div>
           <div className={style.firstNoticeText}>
             <div className={style.firstNoticeTextTop}>
-              {filteredPublications[0]?.date && <small>{format(filteredPublications[0].date, "PP")}</small>}
+              {filteredPublications[0]?.date && <small>Publicado: {format(filteredPublications[0].date, "PP")}</small>}
               <h3>{filteredPublications[0]?.title}</h3>
               <p>{filteredPublications[0]?.description}</p>
             </div>

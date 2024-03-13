@@ -5,7 +5,7 @@ import { Pagination, Publication, SearchBar } from "../../components";
 import { filteredPublications, setCurrentPage } from "../../redux/actions";
 import usePaginate from "../../hooks/usePaginate";
 import { Link, useLocation } from "react-router-dom";
-import { councilors, court, institutional } from "../../utils/const";
+import { councilors, court, institutional } from "../../assets/data";
 
 export default function Publications({ items }) {
   const { currentView, currentViewItems } = usePaginate(items);
