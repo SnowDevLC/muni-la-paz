@@ -66,7 +66,7 @@ export default function Home({ publications, complexes }) {
             Más noticias <FaArrowRight size={25} />
           </Link>
         </div>
-        <Link to={`/noticia/${filteredPublications[0]?.id}`} className={style.firstNotice}>
+        <Link to={`/noticia/${filteredPublications[0]?.id}/${filteredPublications[0]?.title}`} className={style.firstNotice}>
           <div className={style.firstNoticeImg}>
             <img src={VITE_BACKEND_URL + filteredPublications[0]?.images[0]} alt={filteredPublications[0]?.id} />
           </div>
