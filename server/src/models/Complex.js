@@ -36,9 +36,10 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    whatsapp:{
+    instagram:{
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: ""
     },
     email:{
       type: DataTypes.STRING,

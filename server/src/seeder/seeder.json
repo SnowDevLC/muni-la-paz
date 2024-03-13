@@ -1,10 +1,10 @@
 {
   "users": [
     {
-      "name": "Luis Canales",
-      "email": "usuario1@example.com",
-      "password": "$2b$10$D.RfzQijTcNxkPQ9dzieiOD/mK8EGPRvPdMAG.DYjPxx3YS7.G95q",
-      "rol": "Admin",
+      "name": "Admin",
+      "email": "admin@admin.com",
+      "password": "$2b$10$mJurSR5IVWzYpST8a3WWzOIjOgK7zkZ8OcLHfw27DUJD4YiMuq8ya",
+      "rol": "superAdmin",
       "active": true,
       "passwordChanged": true
     },
@@ -12,17 +12,9 @@
       "name": "Bruno Gimenez",
       "email": "usuario2@example.com",
       "password": "$2b$10$VM0fk.QWcmFxF55JDrBp..oQ6H1O36PkT14Qij8yQ.OOEKAYlZnoG",
-      "rol": "Basic",
+      "rol": "Admin",
       "active": true,
-      "passwordChanged": false
-    },
-    {
-      "name": "Usuario 3",
-      "email": "usuario3@example.com",
-      "password": "$2b$10$80y8E3QX7IeEOObMkiA6vOPG2Trfqouty3XLWj2YJ9loSJhMq7ixS",
-      "rol": "Basic",
-      "active": false,
-      "passwordChanged": false
+      "passwordChanged": true
     }
   ],
   "publications": [
@@ -149,55 +141,42 @@
   ],
   "complexes": [
     {
-      "name": "Cabañas La Paz",
-      "description": "Nuestra Hosteria cuenta con 12 habitaciones, en un ambiente íntimo donde los huéspedes podrán disfrutar de un parque de 4 hectáreas, realizar paseos entre nogales, olivos, robles, ceibos, innumerables plantas autóctonas y hermosas flores.",
-      "lat": -32.2172425800549,
-      "lng": -65.04836357980413,
-      "address": "Calle 123",
-      "images": ["/public/images/complexes/1/complejo.jpg", "/public/images/complexes/1/complejo1.jpg", "/public/images/complexes/1/complejo2.jpg", "/public/images/complexes/1/complejo4.jpg"],
-      "tel":"3554454643",
-      "whatsapp": "3554454643",
-      "email": "prueba@email.com",
-      "web": "prueba.com.ar",
+      "name": "Complejo Cerro Loma Bola",
+      "description": "Complejo Cerro Loma Bola chalets & piscina. ¡Abierto todo el año!. Confortables chalets de 80mts2, 2 dormitorios, todos los servicios. PRECIOS PROMOCIONALES TODO EL AÑO.",
+      "lat": -32.2156620816531,
+      "lng": -65.0297313247391,
+      "address": "Del Piquillin 235, Loma Bola, Cordoba",
+      "images": ["/public/images/complexes/1/cerro-loma-bola1.webp", "/public/images/complexes/1/cerro-loma-bola2.webp", "/public/images/complexes/1/cerro-loma-bola3.webp", "/public/images/complexes/1/cerro-loma-bola4.webp", "/public/images/complexes/1/cerro-loma-bola5.webp", "/public/images/complexes/1/cerro-loma-bola6.webp"],
+      "tel":"3544506114",
+      "instagram": "",
+      "email": "",
+      "web": "",
       "check": true
     },
     {
-      "name": "Cerro Loma Bola",
-      "description": "Nuestra Hosteria cuenta con 12 habitaciones, en un ambiente íntimo donde los huéspedes podrán disfrutar de un parque de 4 hectáreas, realizar paseos entre nogales, olivos, robles, ceibos, innumerables plantas autóctonas y hermosas flores.",
-      "lat": -32.2172425800549,
-      "lng": -65.04836357980413,
-      "address": "Calle 123",
-      "images": ["/public/images/complexes/2/complejo1.jpg"],
-      "tel":"3554454643",
-      "whatsapp": "3554454643",
-      "email": "prueba@email.com",
-      "web": "prueba.com.ar",
+      "name": "Cabaña Los Nogales",
+      "description": "Emprendimiento familiar, desde hace 20 años al servicio del turismo. ¡Abierto todo el año!. WiFi, TV-cable, Cocheras, Piscinas, Parrillas, Ropa de Cama.",
+      "lat": -32.2139243749852,
+      "lng": -65.0529901002833,
+      "address": "La Paz, Traslasierra - Cordoba",
+      "images": ["/public/images/complexes/2/los-nogales1.webp", "/public/images/complexes/2/los-nogales2.webp", "/public/images/complexes/2/los-nogales3.webp"],
+      "tel":"3544446044",
+      "instagram": "@losnogales_casasdealquiler",
+      "email": "",
+      "web": "",
       "check": true
     },
     {
-      "name": "Bello Horizonte",
-      "description": "Nuestra Hosteria cuenta con 12 habitaciones, en un ambiente íntimo donde los huéspedes podrán disfrutar de un parque de 4 hectáreas, realizar paseos entre nogales, olivos, robles, ceibos, innumerables plantas autóctonas y hermosas flores.",
-      "lat": -32.2172425800549,
-      "lng": -65.04836357980413,
-      "address": "Calle 123",
-      "images": ["/public/images/complexes/3/complejo2.jpg"],
-      "tel":"3554454643",
-      "whatsapp": "3554454643",
-      "email": "prueba@email.com",
-      "web": "prueba.com.ar",
-      "check": true
-    },
-    {
-      "name": "Cabañas La Sonrisa",
-      "description": "Nuestra Hosteria cuenta con 12 habitaciones, en un ambiente íntimo donde los huéspedes podrán disfrutar de un parque de 4 hectáreas, realizar paseos entre nogales, olivos, robles, ceibos, innumerables plantas autóctonas y hermosas flores.",
-      "lat": -32.2172425800549,
-      "lng": -65.04836357980413,
-      "address": "Calle 1234",
-      "images": ["/public/images/complexes/4/complejo4.jpg"],
-      "tel":"3554454643",
-      "whatsapp": "3554454643",
-      "email": "prueba@email.com",
-      "web": "prueba.com.ar",
+      "name": "Villa Dora - Casa de té",
+      "description": "Cabañas para 2, 4 y 6 personas, día de té y pileta, almuerzos y cenas.",
+      "lat": -32.2184447058933,
+      "lng": -65.02374102023371,
+      "address": "Loma Bola - Cordoba",
+      "images": ["/public/images/complexes/3/villa-dora1.webp", "/public/images/complexes/3/villa-dora2.webp", "/public/images/complexes/3/villa-dora3.webp", "/public/images/complexes/3/villa-dora4.webp", "/public/images/complexes/3/villa-dora5.webp", "/public/images/complexes/3/villa-dora6.webp", "/public/images/complexes/3/villa-dora7.webp", "/public/images/complexes/3/villa-dora8.webp", "/public/images/complexes/3/villa-dora9.webp"],
+      "tel":"1168982552",
+      "instagram": "@villadoralomabola",
+      "email": "",
+      "web": "",
       "check": true
     }
   ]

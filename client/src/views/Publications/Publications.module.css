@@ -153,6 +153,7 @@
       justify-content: center;
       align-items: center;
       gap: 1rem;
+      border-radius: 10px;
 
       .imgCircle {
         width: 200px;
@@ -162,6 +163,15 @@
       }
       .imgCouncilor {
         width: 200px;
+      }
+
+      .name {
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      .position {
+        font-size: 14px;
       }
     }
   }

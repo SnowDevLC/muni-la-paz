@@ -53,4 +53,9 @@
     background: rgba(0, 128, 0, 0.5);
     color: black;
   }
+  .password:hover {
+    border: 1px solid black;
+    background: rgba(0, 0, 0, 0.5);
+    color: black;
+  }
 }

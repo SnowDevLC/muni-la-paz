@@ -8,12 +8,23 @@ import style from "./PublicationForm.module.css";
 import "react-day-picker/dist/style.css";
 import axios from "axios";
 const { VITE_BACKEND_URL } = import.meta.env;
-import { useDispatch } from "react-redux";
 import { FaUpload } from "react-icons/fa";
 
-export default function PublicationForm({ publication, authUser }) {
+import { Document, Page, pdfjs } from "react-pdf";
+pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.js", import.meta.url).toString();
 
-  const allTypes = ["General", "Salud", "Institucional", "Deporte", "Concejo", "Servicio"];
+export default function PublicationForm({ publication, authUser }) {
+  const allTypes = [
+    "General",
+    "Evento",
+    "Salud",
+    "Institucional",
+    "Deporte",
+    "Concejo",
+    "Servicio",
+    "Turismo",
+    "Cultura",
+  ];
   const [input, setInput] = useState({
     title: publication?.title || "",
     description: publication?.description || "",
@@ -62,14 +73,14 @@ export default function PublicationForm({ publication, authUser }) {
     });
   };
 
-  const removePhoto = (indexImage) => {
+  const removePhoto = (indexImage, file) => {
     setInput((prevInput) => {
       const updatedImages = prevInput.images.filter((_, index) => index !== indexImage);
       const updatedPreviews = prevInput.imagesPreviews.filter((_, index) => index !== indexImage);
 
       Swal.fire({
-        title: "Borrar imagen",
-        text: "Se borro la imagen correctamente",
+        title: `Borrar ${file}`,
+        text: `Se borro ${file} correctamente`,
         icon: "success",
         showConfirmButton: false,
         timer: 1500,
@@ -239,7 +250,7 @@ export default function PublicationForm({ publication, authUser }) {
         <div className={style.content}>
           <h1>Editar Publicación</h1>
           <form onSubmit={handleEdit} className={style.form} encType="multipart/form-data">
-          <div className={style.divInput}>
+            <div className={style.divInput}>
               <label>
                 Titulo{" "}
                 <input
@@ -283,7 +294,13 @@ export default function PublicationForm({ publication, authUser }) {
             <div className={style.divInput}>
               <label className={style.isEventLabel}>
                 Marcar si es un Evento
-                <input type="checkbox" name="isEvent" checked={input.isEvent} className={style.inputCheckbox} onChange={handleChange} />
+                <input
+                  type="checkbox"
+                  name="isEvent"
+                  checked={input.isEvent}
+                  className={style.inputCheckbox}
+                  onChange={handleChange}
+                />
               </label>
             </div>
 
@@ -306,16 +323,31 @@ export default function PublicationForm({ publication, authUser }) {
 
             <div className={style.divInput}>
               {input.type === "Concejo" ? (
-                <label>
-                  Archivo PDF
-                  <input type="file" className={style.inputFile} onChange={handleChange} />
-                </label>
+                <>
+                  <label>
+                    Click para subir Archivo PDF
+                    <input type="file" className={style.inputFile} onChange={handleChange} />
+                    <FaUpload className={style.icon} />
+                  </label>
+                  {input.imagesPreviews && input.imagesPreviews.length > 0 && (
+                    <div className={style.divPdf}>
+                      <Document file={input.imagesPreviews[0]} className={style.pdf}>
+                        <Page pageNumber={1} width={280} renderTextLayer={false} renderAnnotationLayer={false} />
+                        <div className={style.buttonsImage}>
+                          <button type="button" className={style.btnDelete} onClick={() => removePhoto(0, "pdf")}>
+                            eliminar
+                          </button>
+                        </div>
+                      </Document>
+                    </div>
+                  )}
+                </>
               ) : (
                 <>
                   <label>
                     Imágenes
                     <input type="file" multiple className={style.inputFile} onChange={handleChange} />
-                    <FaUpload className={style.icon}/>
+                    <FaUpload className={style.icon} />
                   </label>
                   {input.imagesPreviews && (
                     <div className={style.gridImages}>
@@ -323,7 +355,11 @@ export default function PublicationForm({ publication, authUser }) {
                         <div key={index} className={style.divImage}>
                           <img src={link} alt={`imagen ${index}`} />
                           <div className={style.buttonsImage}>
-                            <button type="button" className={style.btnDelete} onClick={() => removePhoto(index)}>
+                            <button
+                              type="button"
+                              className={style.btnDelete}
+                              onClick={() => removePhoto(index, "imagen")}
+                            >
                               eliminar
                             </button>
                             {index !== 0 && (
@@ -393,7 +429,13 @@ export default function PublicationForm({ publication, authUser }) {
             <div className={style.divInput}>
               <label className={style.isEventLabel}>
                 Marcar si es un Evento
-                <input type="checkbox" name="isEvent" checked={input.isEvent} className={style.inputCheckbox} onChange={handleChange} />
+                <input
+                  type="checkbox"
+                  name="isEvent"
+                  checked={input.isEvent}
+                  className={style.inputCheckbox}
+                  onChange={handleChange}
+                />
               </label>
             </div>
 
@@ -416,17 +458,31 @@ export default function PublicationForm({ publication, authUser }) {
 
             <div className={style.divInput}>
               {input.type === "Concejo" ? (
-                <label>
-                  Click para subir Archivo PDF
-                  <input type="file" className={style.inputFile} onChange={handleChange} />
-                  <FaUpload className={style.icon}/>
-                </label>
+                <>
+                  <label>
+                    Click para subir Archivo PDF
+                    <input type="file" className={style.inputFile} onChange={handleChange} />
+                    <FaUpload className={style.icon} />
+                  </label>
+                  {input.imagesPreviews && input.imagesPreviews.length > 0 && (
+                    <div className={style.divPdf}>
+                      <Document file={input.imagesPreviews[0]} className={style.pdf}>
+                        <Page pageNumber={1} width={280} renderTextLayer={false} renderAnnotationLayer={false} />
+                        <div className={style.buttonsImage}>
+                          <button type="button" className={style.btnDelete} onClick={() => removePhoto(0, "pdf")}>
+                            eliminar
+                          </button>
+                        </div>
+                      </Document>
+                    </div>
+                  )}
+                </>
               ) : (
                 <>
                   <label>
                     Click para subir Imágenes
                     <input type="file" multiple className={style.inputFile} onChange={handleChange} />
-                    <FaUpload className={style.icon}/>
+                    <FaUpload className={style.icon} />
                   </label>
                   {input.imagesPreviews && (
                     <div className={style.gridImages}>
@@ -434,7 +490,11 @@ export default function PublicationForm({ publication, authUser }) {
                         <div key={index} className={style.divImage}>
                           <img src={link} alt={`imagen ${index}`} />
                           <div className={style.buttonsImage}>
-                            <button type="button" className={style.btnDelete} onClick={() => removePhoto(index)}>
+                            <button
+                              type="button"
+                              className={style.btnDelete}
+                              onClick={() => removePhoto(index, "imagen")}
+                            >
                               eliminar
                             </button>
                             {index !== 0 && (

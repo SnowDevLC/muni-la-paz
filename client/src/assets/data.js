@@ -145,6 +145,6 @@ export const institutional = [
   {
     name: 'Gabriel Hernan Paulik',
     position: 'Secretaría de Gobierno',
-    img: '/img/team/concejal.webp'
+    img: '/img/team/GabrielHernanPaulik.webp'
   }
 ];

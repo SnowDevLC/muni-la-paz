@@ -28,7 +28,7 @@ export default function Footer() {
       <div className={style.bottomFooter}>
         <div className={style.contentBottomFooter}>
           <Link>
-            www.<b>lapazcba</b>.gob.ar
+            www.<b>munilapazcba</b>.gob.ar
           </Link>
           <span>Buenos Aires 50 - La Paz</span>
         </div>
