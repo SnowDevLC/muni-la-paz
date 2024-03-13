@@ -21,11 +21,6 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use((req, res, next) => {
-  res.setHeader('Content-Type', 'application/json');
-  next();
-});
-
 const publicFolderPath = path.join(__dirname, '../../public');
 app.use('/public/images', express.static(path.join(publicFolderPath, 'images')));
 
