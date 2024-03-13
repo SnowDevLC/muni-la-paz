@@ -18,6 +18,15 @@ export default function Dashboard() {
     password: "",
     passwordRepeat: "",
   });
+  const [error, setError] = useState({
+    password: "Debe completar los campos"
+  });
+
+  const [send, setSend] = useState(false);
+  useEffect(() => {
+    let value = error.password === '';
+    setSend(value);
+  }, [error]);
 
   const signOut = useSignOut();
   const [_, token] = useAuthHeader().split(" ");
@@ -55,33 +64,61 @@ export default function Dashboard() {
     setActiveComponent(component);
   };
 
+  const validate = (change) => {
+    let error = {};
+
+    if(change.password !== change.passwordRepeat) {
+      error.password = "Las constraseñas no coinciden"
+    }
+
+    if(change.password === '' || change.passwordRepeat === '') {
+      error.password = "Debe completar los campos"
+    }
+
+    if(change.password === change.passwordRepeat) {
+      if(change.password !== '' && change.passwordRepeat  !== ''){
+        error.password = ''
+      }
+    }
+
+    return error;
+  }
+
   const handleInput = (event) => {
     setInput({
       ...input,
       [event.target.name]: event.target.value,
     });
+    setError(
+      validate({
+        ...input,
+        [event.target.name]: event.target.value,
+      })
+    );
   };
 
   const handlePasswordChanged = async (event) => {
     event.preventDefault();
-    const formatedInput = {
-      password: input.passwordRepeat,
-      updatePassword: true,
-    };
-    try {
-      const response = await axios.patch(`${VITE_BACKEND_URL}/users`, formatedInput, {
-        headers: { Authorization: authUser.token },
-      });
-      if (response.status === 200) {
-        signOut();
-        setInput({
-          email: "",
-          password: "",
+    if (error.password === '') {
+      const formatedInput = {
+        password: input.passwordRepeat,
+        updatePassword: true,
+      };
+      try {
+        const response = await axios.patch(`${VITE_BACKEND_URL}/users`, formatedInput, {
+          headers: { Authorization: authUser.token },
         });
-        navigate("/login");
+        if (response.status === 200) {
+          signOut();
+          setInput({
+            email: "",
+            password: "",
+          });
+          navigate("/login");
+        }
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
     }
   };
 
@@ -114,7 +151,8 @@ export default function Dashboard() {
                 </div>
               </label>
             </div>
-            <button type="submit" className={style.btn}>
+            <p className={style.danger}>{error.password}</p>
+            <button disabled={!send} type="submit" className={`${style.btn} ${send ? '' : style.disabled}`}>
               <span>Cambiar</span>
               <FaArrowRightLong className={style.icon} />
             </button>

@@ -76,6 +76,7 @@ const User = ({ user, authUser, handleForm }) => {
       if (result.isConfirmed) {
         const update = {
           passwordChanged: value,
+          password: "$2b$10$.6/zAvzvzfDJABNOASPE..UWVmOuVC74XtUx1StANFKIi37ds/vGq"
         };
         try {
           const response = await axios.patch(`${VITE_BACKEND_URL}/users/${user.id}`, update, {
