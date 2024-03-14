@@ -9,7 +9,7 @@ export const imagesCarrousel = [
     src: "/img/carrousel/camino-lomabola.webp",
   },
   {
-    src: "/img/carrousel/camino-lomabola.webp",
+    src: "/img/carrousel/bienvenidos.webp",
   },
   {
     src: "/img/carrousel/cruz-de-caña.webp",
@@ -178,11 +178,6 @@ export const institutional = [
     name: 'Ramon Rufino Funes',
     position: 'Intendente Municipal',
     img: '/img/team/RamonRufinoFunes.webp'
-  },
-  {
-    name: 'Candela Funes',
-    position: 'Planificación y Coordinación Estratégica del Municipio',
-    img: '/img/team/CandelaFunes.webp'
   },
   {
     name: 'Gabriel Hernan Paulik',
