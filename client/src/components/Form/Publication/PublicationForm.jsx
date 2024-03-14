@@ -201,6 +201,7 @@ export default function PublicationForm({ publication, authUser }) {
         formData.append("isEvent", input.isEvent);
         formData.append("date", input.date.toISOString());
         formData.append("eventDate", input.eventDate.toISOString());
+        formData.append("check", false);
 
         if (input.images.length) {
           input.images.forEach((image) => {
