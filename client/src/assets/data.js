@@ -1,22 +1,55 @@
 export const imagesCarrousel = [
   {
-    src: "/img/carrousel/cruz.webp",
+    src: "/img/carrousel/aljibe-entrada-lapaz.webp",
   },
   {
-    src: "/img/carrousel/burrito.webp",
+    src: "/img/carrousel/camino-loma-bola.webp",
   },
   {
-    src: "/img/carrousel/policia.webp",
+    src: "/img/carrousel/camino-lomabola.webp",
   },
   {
-    src: "/img/carrousel/evento.webp",
+    src: "/img/carrousel/camino-lomabola.webp",
   },
   {
-    src: "/img/carrousel/turismo.webp",
+    src: "/img/carrousel/cruz-de-caña.webp",
   },
   {
-    src: "/img/carrousel/iglesia.webp",
-  }
+    src: "/img/carrousel/cruze-los-arroyos.webp",
+  },
+  {
+    src: "/img/carrousel/la-cruz-nublado.webp",
+  },
+  {
+    src: "/img/carrousel/las-chacras.webp",
+  },
+  {
+    src: "/img/carrousel/loma-bola-desde-la-cruz.webp",
+  },
+  {
+    src: "/img/carrousel/muni.webp",
+  },
+  {
+    src: "/img/carrousel/museo-loma-bola.webp",
+  },
+  {
+    src: "/img/carrousel/niños-el-club.webp",
+  },
+  {
+    src: "/img/carrousel/oficina-turismo-nublado.webp",
+  },
+  {
+    src: "/img/carrousel/plaza-la-paz-noche.webp",
+  },
+  {
+    src: "/img/carrousel/plaza-quebracho.webp",
+  },
+  {
+    src: "/img/carrousel/todos.webp",
+  },
+  {
+    src: "/img/carrousel/todoss.webp",
+  },
 ];
 
 export const contacts = [
@@ -57,6 +90,20 @@ export const contacts = [
     title: 'Bomberos Voluntarios',
     phone: '3544-496600',
     whatsapp: '3544-536590'
+  },
+  {
+    title: 'Vacunatorio Municipal',
+    phone: '3544-594129',
+    whatsapp: '3544-594129'
+  },
+  {
+    title: 'Accion Social',
+    phone: '3544-416691',
+  },
+  {
+    title: 'Juzgado de Paz(La Paz)',
+    phone: '351-2356999',
+    whatsapp: '351-2356999'
   },
 ];
 
@@ -133,6 +180,16 @@ export const institutional = [
     img: '/img/team/RamonRufinoFunes.webp'
   },
   {
+    name: 'Candela Funes',
+    position: 'Planificación y Coordinación Estratégica del Municipio',
+    img: '/img/team/CandelaFunes.webp'
+  },
+  {
+    name: 'Gabriel Hernan Paulik',
+    position: 'Secretaría de Gobierno',
+    img: '/img/team/GabrielHernanPaulik.webp'
+  },
+  {
     name: 'Carlos Gustavo Hachuel',
     position: 'Secretaría General',
     img: '/img/team/CarlosGustavoHachuel.webp'
@@ -141,10 +198,5 @@ export const institutional = [
     name: 'Franco Suau',
     position: 'Secretaría de Hacienda',
     img: '/img/team/SuauFranco.webp'
-  },
-  {
-    name: 'Gabriel Hernan Paulik',
-    position: 'Secretaría de Gobierno',
-    img: '/img/team/GabrielHernanPaulik.webp'
   }
 ];

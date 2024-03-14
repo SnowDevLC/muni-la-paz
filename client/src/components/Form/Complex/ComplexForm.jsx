@@ -185,6 +185,7 @@ export default function ComplexForm({ complex, authUser }) {
         formData.append("web", input.web);
         formData.append("lat", input.lat);
         formData.append("lng", input.lng);
+        formData.append("check", false);
 
         if (input.images.length) {
           input.images.forEach((image) => {
