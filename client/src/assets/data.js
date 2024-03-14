@@ -133,6 +133,11 @@ export const institutional = [
     img: '/img/team/RamonRufinoFunes.webp'
   },
   {
+    name: 'Gabriel Hernan Paulik',
+    position: 'Secretaría de Gobierno',
+    img: '/img/team/GabrielHernanPaulik.webp'
+  },
+  {
     name: 'Carlos Gustavo Hachuel',
     position: 'Secretaría General',
     img: '/img/team/CarlosGustavoHachuel.webp'
@@ -141,10 +146,5 @@ export const institutional = [
     name: 'Franco Suau',
     position: 'Secretaría de Hacienda',
     img: '/img/team/SuauFranco.webp'
-  },
-  {
-    name: 'Gabriel Hernan Paulik',
-    position: 'Secretaría de Gobierno',
-    img: '/img/team/GabrielHernanPaulik.webp'
   }
 ];
