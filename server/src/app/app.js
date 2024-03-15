@@ -21,9 +21,9 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static(__dirname + '../../../client/build'));
+app.use(express.static(__dirname + '../../frontbuild'));
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../../../client/build", "/index.html"));
+  res.sendFile(path.join(__dirname, "../../frontbuild", "/index.html"));
 });
 
 const publicFolderPath = path.join(__dirname, '../../public');

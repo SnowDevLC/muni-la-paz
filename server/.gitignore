@@ -13,7 +13,6 @@ node_modules/
 /build
 
 # Eleventy
-_dist
 _cache
 /_src/localStyles
 
