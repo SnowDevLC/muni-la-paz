@@ -138,7 +138,7 @@ export default function Publication({ publication, complex, authUser, handleForm
           </button>
 
           {authUser.rol && (
-            <div>
+            <div className={style.buttonsAdmin}>
               <button className={`${style.btn} ${style.delete}`} onClick={() => handleDelete("publication")}>
                 <MdDelete />
               </button>
@@ -183,7 +183,7 @@ export default function Publication({ publication, complex, authUser, handleForm
           </button>
 
           {authUser.rol && (
-            <div>
+            <div className={style.buttonsAdmin}>
               <button className={`${style.btn} ${style.delete}`} onClick={() => handleDelete("complex")}>
                 <MdDelete />
               </button>
