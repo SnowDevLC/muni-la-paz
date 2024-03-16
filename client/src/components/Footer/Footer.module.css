@@ -42,14 +42,17 @@ footer {
 
 .bottomFooter {
   background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+  gap: 0.5rem;
   & .contentBottomFooter {
-    width: 70%;
+    width: 80%;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
-    padding: 0.5rem 0;
     & a {
       font-size: 22px;
       color: white;
@@ -57,6 +60,26 @@ footer {
     & span {
       font-size: 20px;
       font-weight: 400;
+    }
+  }
+  & .author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    p {
+      border-top: 1px solid var(--main-bg-color);
+      color: white;
+      font-size: 14px;
+      padding: 0.25rem 1rem 0 1rem;
+    }
+    a {
+      color: black;
+      font-weight: 600;
+    }
+
+    a:hover {
+      color: white;
     }
   }
 }
@@ -92,7 +115,12 @@ footer {
         font-size: 20px;
       }
       & span {
-        font-size: 14px;
+        font-size: 16px;
+      }
+    }
+    & .author {
+      p {
+        font-size: 12px;
       }
     }
   }
