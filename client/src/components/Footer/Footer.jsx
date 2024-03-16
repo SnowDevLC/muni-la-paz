@@ -32,6 +32,9 @@ export default function Footer() {
           </Link>
           <span>Buenos Aires 50 - La Paz</span>
         </div>
+        <div className={style.author}>
+          <p>Diseño y Desarrollo <a href="https://www.linkedin.com/in/bruno-gimenez-6615a9257/" target="_blank">Bruno Gimenez</a> & <a href="https://lcdev.com.ar/" target="_blank">Luis Canales</a></p>
+        </div>
       </div>
     </footer>
   );
