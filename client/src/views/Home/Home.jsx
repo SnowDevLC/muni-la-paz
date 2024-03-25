@@ -14,7 +14,7 @@ const { VITE_BACKEND_URL, VITE_GOOGLE_MAPS_API_KEY } = import.meta.env;
 export default function Home({ publications, complexes }) {
   const filteredPublications = publications
     .filter((publication) => publication.check && !publication.isEvent)
-    .slice(0, 4);
+    .slice(0, 7);
   const filteredComplexes = complexes.filter((complexes) => complexes.check).slice(0, 3);
   const events = publications
     .filter((publication) => publication.check && publication.isEvent && new Date(publication.eventDate) > new Date())
@@ -84,7 +84,8 @@ export default function Home({ publications, complexes }) {
         <div className={style.publications}>
           {filteredPublications?.map(
             (publication, index) =>
-              index > 0 && <Publication key={index} publication={publication} isDetailPage={false} />
+              index > 0 && 
+              <Publication key={index} publication={publication} isDetailPage={false} />
           )}
         </div>
         <Link to="/noticias" className={style.linkMobile}>

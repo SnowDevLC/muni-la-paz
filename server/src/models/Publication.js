@@ -19,7 +19,7 @@ module.exports = (sequelize) => {
       defaultValue: ""
     },
     description: {
-      type: DataTypes.STRING(1000),
+      type: DataTypes.STRING(2000),
       allowNull: false,
       defaultValue: ""
     },

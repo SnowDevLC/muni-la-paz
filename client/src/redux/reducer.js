@@ -77,6 +77,7 @@ const rootReducer = (state = initialState, action) => {
       };
     case FILTERED_PUBLICATIONS:
       let days = new Date();
+      let today = new Date();
       switch (action.payload.date) {
         case "ULTIMOS 3 DIAS":
           days.setDate(days.getDate() - 3);
@@ -87,9 +88,19 @@ const rootReducer = (state = initialState, action) => {
         case "ULTIMO MES":
           days.setDate(days.getDate() - 31);
           break;
+        case "HOY":
+          days.setHours(0, 0, 0, 0);
+          break;
       }
       if (action.payload.date !== "TODAS") {
-        publicationsByFilters = publicationsWithoutFilters.filter((publication) => new Date(publication.date) > days);
+        if (action.payload.date === "HOY") {
+          publicationsByFilters = publicationsWithoutFilters.filter((publication) => {
+            const publicationDate = new Date(publication.date);
+            return publicationDate >= days && publicationDate <= today;
+          });
+        } else {
+          publicationsByFilters = publicationsWithoutFilters.filter((publication) => new Date(publication.date) > days);
+        }
       } else {
         publicationsByFilters = publicationsWithoutFilters;
       }
