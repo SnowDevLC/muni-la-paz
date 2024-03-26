@@ -88,13 +88,18 @@
   width: 90%;
   margin: 1rem auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
   justify-content: center;
   gap: 1.5rem;
 }
 
 
 /*---MEDIIA QUERIES---*/
+@media screen and (max-width: 1700px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  }
+}
 
 
 @media screen and (max-width: 600px) {

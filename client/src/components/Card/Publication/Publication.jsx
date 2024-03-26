@@ -114,7 +114,7 @@ export default function Publication({ publication, complex, authUser, handleForm
         <div className={style.cardText}>
           {location.pathname !== "/" && <small>Publicado: {format(publication.date, "PP")}</small>}
           <h3>{publication.title}</h3>
-          {location.pathname !== "/" && <p>{publication.description}</p>}
+          <p>{publication.description}</p>
           {publication.isEvent && (
             <small className={style.eventDate}>Evento: {format(publication.eventDate, "PP")}</small>
           )}

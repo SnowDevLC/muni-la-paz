@@ -112,7 +112,7 @@
   width: 70%;
   padding-bottom: 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
   justify-content: space-between;
   gap: 2rem;
 }
@@ -178,6 +178,11 @@
 }
 
 /*---MEDIIA QUERIES---*/
+@media screen and (max-width: 1700px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  }
+}
 
 @media screen and (max-width: 1315px) {
   .councilors {

@@ -20,7 +20,7 @@
       width: 100%;
       margin-top: 2rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+      grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
       justify-content: center;
       gap: 3rem;
     }
@@ -43,6 +43,16 @@
   }
 }
 
+
+@media screen and (max-width: 1700px){
+  .complexesSection {
+    .gridDiv {
+      .complexes {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+      }
+    }
+  }
+}
 
 @media screen and (max-width: 600px){
   .complexesSection {
