@@ -4,10 +4,10 @@ import { FaArrowRight } from "react-icons/fa6";
 import style from "./Tourism.module.css";
 
 const Tourism = ({ items, events, complexes }) => {
-  items = items.slice(0, 3);
+  items = items.slice(0, 4);
   events = events.filter((publication) => new Date(publication.eventDate) > new Date())
-  .sort((a, b) => new Date(a.eventDate) - new Date(b.eventDate)).slice(0,3);
-  complexes = complexes.filter((complex) => complex.check).slice(0, 3);
+  .sort((a, b) => new Date(a.eventDate) - new Date(b.eventDate)).slice(0,4);
+  complexes = complexes.filter((complex) => complex.check).slice(0, 4);
 
   return (
     <div className={style.container}>

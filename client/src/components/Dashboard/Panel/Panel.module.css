@@ -150,6 +150,18 @@
 }
 
 /*---MEDIA QUERIES---*/
+@media screen and (max-width: 1700px){
+  .panelSection {
+    .bottomDiv {
+      .listDiv {
+        .itemsContainer {
+          grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 1000px){
 
   .panelSection {
@@ -183,17 +195,11 @@
     .bottomDiv {
       .listDiv {
         .itemsContainer {
-          display: grid;
           grid-template-columns: repeat(auto-fit, minmax(280px, 280px));
-          justify-content: center;
-          gap: 1rem;
         }
   
         .usersContainer {
-          display: grid;
           grid-template-columns: repeat(auto-fit, minmax(280px, 280px));
-          justify-content: center;
-          gap: 1rem;
         }
       }
     }

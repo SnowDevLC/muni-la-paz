@@ -178,6 +178,11 @@
 }
 
 /*---MEDIIA QUERIES---*/
+@media screen and (max-width: 1700px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  }
+}
 
 @media screen and (max-width: 1315px) {
   .councilors {
