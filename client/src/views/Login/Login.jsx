@@ -63,9 +63,9 @@ export default function Login() {
     }
   };
 
-  if (isAuthenticated()) {
-    return <Navigate to={"/dashboard"} replace />;
-  } else {
+  // if (isAuthenticated()) {
+  //   return <Navigate to={"/dashboard"} replace />;
+  // } else {
     return (
       <main className={style.login}>
         <div className={style.container}>
@@ -114,5 +114,5 @@ export default function Login() {
         </div>
       </main>
     );
-  }
+  
 }
