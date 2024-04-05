@@ -14,12 +14,9 @@ setDefaultOptions({ locale: es });
 import { Document, Page, pdfjs } from "react-pdf";
 pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.js", import.meta.url).toString();
 
-
 export default function Publication({ publication, complex, authUser, handleForm }) {
   const dispatch = useDispatch();
   const location = useLocation();
-
-  
 
   const handleDelete = async (type) => {
     Swal.fire({
@@ -101,7 +98,7 @@ export default function Publication({ publication, complex, authUser, handleForm
   return publication ? (
     <div className={style.card}>
       <Link
-        to={`/noticia/${publication.id}/${encodeURIComponent(publication.title).replace(/%20/g, '-')}`}
+        to={`/noticia/${publication.id}/${encodeURIComponent(publication.title).replace(/%20/g, "-")}`}
         target={location.pathname === "/dashboard" ? "_blank" : "_self"}
         className={style.data}
       >
@@ -140,11 +137,11 @@ export default function Publication({ publication, complex, authUser, handleForm
             <MdEdit />
           </button>
 
-          <button className={`${style.btn} ${style.delete}`} onClick={() => handleDelete("publication")}>
-            <MdDelete />
-          </button>
           {authUser.rol && (
-            <div>
+            <div className={style.buttonsAdmin}>
+              <button className={`${style.btn} ${style.delete}`} onClick={() => handleDelete("publication")}>
+                <MdDelete />
+              </button>
               {publication.check === false ? (
                 <button className={`${style.btn} ${style.check}`} onClick={() => handleCheck(true, "publication")}>
                   <MdCheck />
@@ -162,7 +159,7 @@ export default function Publication({ publication, complex, authUser, handleForm
   ) : (
     <div className={style.card}>
       <Link
-        to={`/alojamientos/${complex.id}/${encodeURIComponent(complex.name).replace(/%20/g, '-')}`}
+        to={`/alojamientos/${complex.id}/${encodeURIComponent(complex.name).replace(/%20/g, "-")}`}
         target={location.pathname === "/dashboard" ? "_blank" : "_self"}
         className={style.data}
       >
@@ -185,11 +182,11 @@ export default function Publication({ publication, complex, authUser, handleForm
             <MdEdit />
           </button>
 
-          <button className={`${style.btn} ${style.delete}`} onClick={() => handleDelete("complex")}>
-            <MdDelete />
-          </button>
           {authUser.rol && (
-            <div>
+            <div className={style.buttonsAdmin}>
+              <button className={`${style.btn} ${style.delete}`} onClick={() => handleDelete("complex")}>
+                <MdDelete />
+              </button>
               {complex.check === false ? (
                 <button className={`${style.btn} ${style.check}`} onClick={() => handleCheck(true, "complex")}>
                   <MdCheck />

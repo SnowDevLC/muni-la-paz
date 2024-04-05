@@ -21,9 +21,9 @@ Complex.belongsTo(User, { through: "user_complex", timestamps: false });
 
 const dbConnection = async () => {
   try {
-    await sequelize.sync({ force: true });
+    await sequelize.sync({ force: false });
     console.log("DB Connect");
-    await loadData(User, Publication, Complex);
+    // await loadData(User, Publication, Complex);
   } catch (error) {
     throw new Error("Fail DB Connect");
   }
