@@ -105,14 +105,14 @@ export default function Publication({ publication, complex, authUser, handleForm
         {publication.type === "Concejo" ? (
           <div className={style.pdfContainer}>
             <Document file={VITE_BACKEND_URL + publication.images[0]}>
-              <Page pageNumber={1} width={400} renderTextLayer={false} renderAnnotationLayer={false} />
+              <Page pageNumber={1} width={225} renderTextLayer={false} renderAnnotationLayer={false} />
             </Document>
           </div>
         ) : (
           <img src={VITE_BACKEND_URL + publication.images[0]} alt={publication.title} />
         )}
         <div className={style.cardText}>
-          <small>Publicado: {format(publication.date, "PP")}</small>
+          {location.pathname !== "/" && <small>Publicado: {format(publication.date, "PP")}</small>}
           <h3>{publication.title}</h3>
           <p>{publication.description}</p>
           {publication.isEvent && (
