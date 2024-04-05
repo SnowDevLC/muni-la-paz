@@ -64,10 +64,8 @@ export const contacts = [
     email: 'oe.lapaz@gmail.com'
   },
   {
-    title: 'Reclamos Agua - 8:00 a 13:00',
-    phone: '3544-496010',
-    title2:"Fuera de Horario",
-    phone2:" 3544-651480"
+    title: 'Reclamos Agua (24hs)',
+    phone: '3544-460636',
   },
   {
     title: 'Turismo',
@@ -75,12 +73,13 @@ export const contacts = [
     email: 'sectorlapaz@gmail.com'
   },
   {
-    title: 'Publicidad-Radio Eventos',
+    title: 'Publicidad - Radio Eventos - Zoonosis',
     phone: '3544-416376',
   },
   {
-    title: 'Hospital Santa Rita',
-    phone: '3544-593956',
+    title: 'Hospital Municipal - Santa Rita',
+    phone: '3544-496058',
+    whatsapp: '3544-593956',
   },
   {
     title: 'Comisaria La Paz',
@@ -97,8 +96,24 @@ export const contacts = [
     whatsapp: '3544-594129'
   },
   {
-    title: 'Accion Social',
-    phone: '3544-416691',
+    title: 'Oficina de Genero (24hs)',
+    phone: '3544-625515',
+  },
+ {
+    title: 'Oficina de Derechos Humanos',
+    phone: '2664-931507',
+  },
+  {
+    title: 'Defensa Civil',
+    phone: '011-32728757',
+  },
+  {
+    title: 'Caja/Cobros-oficina',
+    phone: '3544-594151',
+  },
+  {
+    title: 'Bromatologia (lunes a viernes - 8 a 13hs)',
+    phone: '3544-417006',
   },
   {
     title: 'Juzgado de Paz(La Paz)',
