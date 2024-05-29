@@ -27,8 +27,33 @@
   }
 }
 
-.navTitles {
+.navTitlesTourism {
   width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tourismOffice {
+  font-size: 1.1rem;
+  font-weight: 500;
+  background-color: var(--main-color);
+  padding: 0.5rem;
+  border-radius: .5rem;
+  transition: all .4s ease;
+  a {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+  
+}
+.tourismOffice:hover {
+  transform: scale(1.1);
+}
+
+.navTitles {
   display: flex;
   align-items: start;
   gap: 0.5rem;
@@ -128,5 +153,20 @@
 
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 280px));
+  }
+
+  .tourismOffice {
+    a {
+      gap: .25rem;
+    } 
+  }
+}
+
+@media screen and (max-width: 450px) {
+
+  .navTitlesTourism {
+    flex-direction: column;
+    align-items: self-start;
+    gap: .5rem; 
   }
 }

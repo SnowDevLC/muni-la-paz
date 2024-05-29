@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Publication } from "../../components";
-import { FaArrowRight } from "react-icons/fa6";
+import { FaArrowRight, FaFacebook } from "react-icons/fa6";
+import { FaFacebookF } from "react-icons/fa";
 import style from "./Tourism.module.css";
 
 const Tourism = ({ items, events, complexes }) => {
@@ -16,9 +17,14 @@ const Tourism = ({ items, events, complexes }) => {
           <h1>Descubrí lo que tenemos preparado para vos</h1>
         </div>
       </header>
-      <nav className={style.navTitles}>
-        <Link to="/">Home</Link>
-        <span>Turismo</span>
+      <nav className={style.navTitlesTourism}>
+        <div className={style.navTitles}>
+          <Link to="/">Home</Link>
+          <span>Turismo</span>
+        </div>
+        <div className={style.tourismOffice}>
+          <a href="https://www.facebook.com/tursimo.lapaz.9?mibextid=ZbWKwL" target="_blank">Oficina de Turismo <FaFacebook size={30}/></a>
+        </div>
       </nav>
 
       <div className={style.section}>
