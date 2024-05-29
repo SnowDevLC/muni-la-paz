@@ -6,7 +6,13 @@ export const imagesCarrousel = [
     src: "/img/carrousel/camino-loma-bola.webp",
   },
   {
+    src: "/img/carrousel/vivalapatria.webp",
+  },
+  {
     src: "/img/carrousel/camino-lomabola.webp",
+  },
+  {
+    src: "/img/carrousel/bv.webp",
   },
   {
     src: "/img/carrousel/bienvenidos.webp",
@@ -15,16 +21,25 @@ export const imagesCarrousel = [
     src: "/img/carrousel/cruz-de-caña.webp",
   },
   {
+    src: "/img/carrousel/festival1.webp",
+  },
+  {
     src: "/img/carrousel/cruze-los-arroyos.webp",
   },
   {
     src: "/img/carrousel/la-cruz-nublado.webp",
   },
   {
+    src: "/img/carrousel/festival2.webp",
+  },
+  {
     src: "/img/carrousel/las-chacras.webp",
   },
   {
     src: "/img/carrousel/loma-bola-desde-la-cruz.webp",
+  },
+  {
+    src: "/img/carrousel/festival3.webp",
   },
   {
     src: "/img/carrousel/muni.webp",
@@ -36,10 +51,16 @@ export const imagesCarrousel = [
     src: "/img/carrousel/niños-el-club.webp",
   },
   {
+    src: "/img/carrousel/futbol.webp",
+  },
+  {
     src: "/img/carrousel/oficina-turismo-nublado.webp",
   },
   {
     src: "/img/carrousel/plaza-la-paz-noche.webp",
+  },
+  {
+    src: "/img/carrousel/sierras.webp",
   },
   {
     src: "/img/carrousel/plaza-quebracho.webp",
