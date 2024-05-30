@@ -3,9 +3,6 @@ export const imagesCarrousel = [
     src: "/img/carrousel/aljibe-entrada-lapaz.webp",
   },
   {
-    src: "/img/carrousel/camino-loma-bola.webp",
-  },
-  {
     src: "/img/carrousel/vivalapatria.webp",
   },
   {
@@ -22,9 +19,6 @@ export const imagesCarrousel = [
   },
   {
     src: "/img/carrousel/festival1.webp",
-  },
-  {
-    src: "/img/carrousel/cruze-los-arroyos.webp",
   },
   {
     src: "/img/carrousel/la-cruz-nublado.webp",
@@ -55,9 +49,6 @@ export const imagesCarrousel = [
   },
   {
     src: "/img/carrousel/oficina-turismo-nublado.webp",
-  },
-  {
-    src: "/img/carrousel/plaza-la-paz-noche.webp",
   },
   {
     src: "/img/carrousel/sierras.webp",
