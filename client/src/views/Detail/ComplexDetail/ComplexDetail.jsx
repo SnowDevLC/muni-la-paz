@@ -66,19 +66,24 @@ const ComplexDetail = () => {
               )}
               {complex?.images && complex.images.length > 1 && (
                 <div className={style.imagesSmall}>
-                  {complex?.images.map(
-                    (image, index) =>
-                      index > 0 &&
-                      index < 4 && (
+                {complex?.images.map(
+                  (image, index) =>
+                    index > 0 &&
+                    index < 4 && (
+                      <div key={index} className={style.imageContainer}>
                         <img
-                          key={index}
                           onClick={() => handleImageClick(VITE_BACKEND_URL + image)}
                           src={VITE_BACKEND_URL + image}
                           alt={complex.name + "image" + index}
+                          className={index === 3 && complex.images.length > 4 ? style.imageWithOverlay : ''}
                         />
-                      )
-                  )}
-                </div>
+                        {index === 3 && complex.images.length > 4 && (
+                          <div className={style.overlay}>+{complex.images.length - 4}</div>
+                        )}
+                      </div>
+                    )
+                )}
+              </div>
               )}
               {complex?.images && complex.images.length > 1 && (
                 <button onClick={() => handleImageClick(VITE_BACKEND_URL + complex.images[0])}>

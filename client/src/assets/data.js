@@ -100,7 +100,9 @@ export const contacts = [
   {
     title: 'Bomberos Voluntarios',
     phone: '3544-496600',
-    whatsapp: '3544-536590'
+    whatsapp: '3544-536590',
+    instagram: 'https://www.instagram.com/bomberos_la_paz_97?igsh=MWMzc3FpaGNwMGUwMQ==',
+    facebook: 'https://www.facebook.com/profile.php?id=100011400955700&mibextid=ZbWKwL'
   },
   {
     title: 'Vacunatorio Municipal',
