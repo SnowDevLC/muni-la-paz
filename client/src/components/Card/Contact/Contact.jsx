@@ -1,11 +1,11 @@
 import React from "react";
 import style from "./Contact.module.css";
 import { BsFillTelephoneFill } from "react-icons/bs";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaFacebookF, FaInstagram } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 
 const ContactCard = ({ contact }) => {
-  const { title, phone, whatsapp, email, title2, phone2 } = contact;
+  const { title, phone, whatsapp, email, title2, phone2, instagram, facebook } = contact;
   return (
     <div className={style.card}>
       <h2 className={style.title}>{title}</h2>
@@ -24,6 +24,16 @@ const ContactCard = ({ contact }) => {
         {email && (
           <p className={style.contact}>
             <AiOutlineMail /> <a href={`mailto:${email}`}>{email}</a>
+          </p>
+        )}
+        {instagram && (
+          <p className={style.contact}>
+            <FaInstagram /> <a href={instagram} target="_blank">Instagram</a>
+          </p>
+        )}
+        {facebook && (
+          <p className={style.contact}>
+            <FaFacebookF /> <a href={facebook} target="_blank">Facebook</a>
           </p>
         )}
       </div>

@@ -10,7 +10,6 @@ import { useSelector } from "react-redux";
 import { Publication } from "../../../components";
 const { VITE_BACKEND_URL } = import.meta.env;
 
-
 export default function PublicationDetail() {
   const publication = usePublication();
 
@@ -44,7 +43,7 @@ export default function PublicationDetail() {
   };
 
   const openPdf = (pdf) => {
-    window.open(pdf, '_blank');
+    window.open(pdf, "_blank");
   };
 
   return (
@@ -61,10 +60,8 @@ export default function PublicationDetail() {
           <div className={style.dataLeft}>
             {publication.type === "Concejo" ? (
               <div className={style.pdfContainer}>
-                <embed src={VITE_BACKEND_URL + publication.images[0]} type="application/pdf" className={style.pdf}/>
-                <button onClick={()=>openPdf(VITE_BACKEND_URL + publication.images[0])}>
-                    Ver PDF
-                  </button>
+                <embed src={VITE_BACKEND_URL + publication.images[0]} type="application/pdf" className={style.pdf} />
+                <button onClick={() => openPdf(VITE_BACKEND_URL + publication.images[0])}>Ver PDF</button>
               </div>
             ) : (
               <div className={style.images}>
@@ -81,12 +78,17 @@ export default function PublicationDetail() {
                       (image, index) =>
                         index > 0 &&
                         index < 4 && (
-                          <img
-                            key={index}
-                            onClick={() => handleImageClick(VITE_BACKEND_URL + image)}
-                            src={VITE_BACKEND_URL + image}
-                            alt={publication.title + "image" + index}
-                          />
+                          <div key={index} className={style.imageContainer}>
+                            <img
+                              onClick={() => handleImageClick(VITE_BACKEND_URL + image)}
+                              src={VITE_BACKEND_URL + image}
+                              alt={publication.title + "image" + index}
+                              className={index === 3 && publication.images.length > 4 ? style.imageWithOverlay : ""}
+                            />
+                            {index === 3 && publication.images.length > 4 && (
+                              <div className={style.overlay}>+{publication.images.length - 4}</div>
+                            )}
+                          </div>
                         )
                     )}
                   </div>

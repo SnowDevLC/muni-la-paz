@@ -95,6 +95,25 @@
   }
 }
 
+.imageContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.imageWithOverlay {
+  opacity: 0.6;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2em;
+  pointer-events: none;
+}
+
 .text {
   display: flex;
   flex-direction: column;
