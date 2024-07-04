@@ -71,6 +71,12 @@
         justify-content: center;
       }
 
+      .video {
+        aspect-ratio: 16/9;
+        width: auto;
+        height: auto;
+      }
+
       .gridImages {
         margin-top: 2rem;
         display: grid;
@@ -123,7 +129,7 @@
         .pdf {
           position: relative;
         }
-        
+
         .buttonsImage {
           position: absolute;
           top: 2%;

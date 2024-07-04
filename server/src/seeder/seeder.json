@@ -47,119 +47,16 @@
       "isEvent": true,
       "eventDate": "2024-03-15T22:30:46.682Z",
       "check": true
-    },
-    {
-      "type": "General",
-      "title": "Comunicado Urgente: Precaución por Crecida de Arroyos",
-      "description": "Ante las recientes lluvias intensas, se ha observado un aumento significativo en el nivel de varios arroyos en nuestra comunidad. Instamos a todos los residentes a tomar precauciones inmediatas y evitar áreas cercanas a estos cuerpos de agua. Ante las recientes lluvias intensas, se ha observado un aumento significativo en el nivel de varios arroyos en nuestra comunidad. Instamos a todos los residentes a tomar precauciones inmediatas y evitar áreas cercanas a estos cuerpos de agua.",
-      "date": "2024-02-29T22:30:46.682Z",
-      "isEvent": false,
-      "eventDate": "2024-01-06T22:30:46.682Z",
-      "images": ["/public/images/publications/4/noticia2.jpg"],
-      "check": false
-    },
-    {
-      "type": "Concejo",
-      "title": "Comunicado Urgente: Precaución por Crecida de Arroyos",
-      "description": "Ante las recientes lluvias intensas, se ha observado un aumento significativo en el nivel de varios arroyos en nuestra comunidad. Instamos a todos los residentes a tomar precauciones inmediatas y evitar áreas cercanas a estos cuerpos de agua.",
-      "date": "2024-02-27T22:30:46.682Z",
-      "isEvent": false,
-      "eventDate": "2024-01-05T22:30:46.682Z",
-      "images": ["/public/images/publications/5/pdff.pdf"],
-      "check": true
-    },
-    {
-      "type": "Salud",
-      "title": "Vacunatorio municipal informa",
-      "description": "El pediatra a partir de Enero completará las planillas de cus, los días Martes y Jueves",
-      "images": ["/public/images/publications/6/noticia3.jpg"],
-      "date": "2023-12-29T22:30:46.682Z",
-      "isEvent": false,
-      "eventDate": "2023-12-29T22:30:46.682Z",
-      "check": false
-    },
-    {
-      "type": "Deporte",
-      "title": "Comunicado Urgente: Precaución por Crecida de Arroyos",
-      "description": "Ante las recientes lluvias intensas, se ha observado un aumento significativo en el nivel de varios arroyos en nuestra comunidad. Instamos a todos los residentes a tomar precauciones inmediatas y evitar áreas cercanas a estos cuerpos de agua. Ante las recientes lluvias intensas, se ha observado un aumento significativo en el nivel de varios arroyos en nuestra comunidad. Instamos a todos los residentes a tomar precauciones inmediatas y evitar áreas cercanas a estos cuerpos de agua.",
-      "date": "2024-02-15T22:30:46.682Z",
-      "isEvent": false,
-      "eventDate": "2024-01-23T22:30:46.682Z",
-      "images": ["/public/images/publications/7/noticia2.jpg"],
-      "check": true
-    },
-    {
-      "type": "Concejo",
-      "title": "LA CRUZ PASO A SER LEGALMENTE DE LA PAZ",
-      "description": "En un hito histórico, la emblemática Cruz de la Paz finalmente recibió reconocimiento legal, marcando un momento significativo para la comunidad. Durante años, esta icónica cruz ha sido un símbolo de unidad, esperanza y armonía en nuestra región, y ahora, su estatus legal consolida su importancia.",
-      "date": "2024-01-29T22:30:46.682Z",
-      "isEvent": false,
-      "eventDate": "2024-01-29T22:30:46.682Z",
-      "images": ["/public/images/publications/8/pdff.pdf"],
-      "check": true
-    },
-    {
-      "type": "Cultura",
-      "title": "Festival de la empanada",
-      "description": "Un festival de empanadas es un evento culinario que celebra y destaca la versatilidad y diversidad de este delicios platillo en sus diversas formas y sabores. Este tipo de festivales reúnen a amantes de la comida para disfrutar de una amplia variedad de empanadas, que pueden incluir opciones tradicionales y creativas. Durante el festival, los participantes pueden probar empanadas rellenas con una variedad de ingredientes, desde las clásicas de carne, pollo o queso, hasta opciones más innovadoras que fusionan sabores loca.",
-      "date": "2024-01-20T22:30:46.682Z",
-      "isEvent": true,
-      "eventDate": "2024-04-20T22:30:46.682Z",
-      "images": ["/public/images/publications/9/Empanada-3.jpg"],
-      "check": true
-    },
-    {
-      "type": "Deporte",
-      "title": "Campeonato de voley",
-      "description": "Un campeonato de vóley es un emocionante evento deportivo que reúne a equipos de diferentes lugares para competir en partidos de voleibol. Durante el torneo, los equipos demuestran sus habilidades en la cancha, compitiendo en partidos intensos y emocionantes. Los fanáticos disfrutan del ambiente vibrante, la competitividad y la camaradería entre los jugadores. Estos campeonatos suelen ser una celebración del talento atlético, promoviendo la pasión por el voleibol y fomentando el espíritu deportivo.",
-      "date": "2024-01-19T22:30:46.682Z",
-      "eventDate": "2024-02-28T22:30:46.682Z",
-      "isEvent": true,
-      "images": ["/public/images/publications/10/voley.jpg"],
-      "check": true
-    },
-    {
-      "type": "Turismo",
-      "title": "Senderismo corralito",
-      "description": "El senderismo es una actividad recreativa y deportiva que consiste en caminar por senderos o rutas marcadas en entornos naturales, como bosques, montañas, parques nacionales o áreas rurales. Esta práctica suele realizarse al aire libre, permitiendo a los participantes disfrutar de la naturaleza y explorar paisajes diversos mientras se desplazan a pie.",
-      "date": "2024-01-15T22:30:46.682Z",
-      "isEvent": false,
-      "eventDate": "2024-01-15T22:30:46.682Z",
-      "images": ["/public/images/publications/11/senderismo.jpg"],
-      "check": true
-    },
-    {
-      "type": "Institucional",
-      "title": "SE BRINDO APORTES EN PESOS AL CLUB DE LA PAZ",
-      "description": "Hoy, la comunidad se unió con entusiasmo para brindar un significativo aporte al Club de la Paz. Personas de todas las edades y ámbitos se congregaron con un propósito común: fortalecer las bases de un lugar que ha sido un faro de unión y solidaridad en nuestro vecindario.",
-      "date": "2024-02-02T22:30:46.682Z",
-      "isEvent": false,
-      "eventDate": "2024-02-02T22:30:46.682Z",
-      "images": ["/public/images/publications/12/clublapaz.jpg"],
-      "check": true
     }
   ],
   "complexes": [
-    {
-      "name": "Cabañas Don Esteban",
-      "description": "",
-      "lat": -32.2184447058933,
-      "lng": -65.02374102023371,
-      "address": "",
-      "images": ["/public/images/complexes/4/don-esteban1.webp", "/public/images/complexes/4/don-esteban2.webp", "/public/images/complexes/4/don-esteban3.webp", "/public/images/complexes/4/don-esteban4.webp"],
-      "tel":"",
-      "instagram": "",
-      "email": "jorgeestebanprieto@yahoo.com.ar",
-      "web": "",
-      "check": true
-    },
     {
       "name": "Complejo Cerro Loma Bola",
       "description": "Complejo Cerro Loma Bola chalets & piscina. ¡Abierto todo el año!. Confortables chalets de 80mts2, 2 dormitorios, todos los servicios. PRECIOS PROMOCIONALES TODO EL AÑO.",
       "lat": -32.2156620816531,
       "lng": -65.0297313247391,
       "address": "Del Piquillin 235, Loma Bola, Cordoba",
-      "images": ["/public/images/complexes/1/cerro-loma-bola1.webp", "/public/images/complexes/1/cerro-loma-bola2.webp", "/public/images/complexes/1/cerro-loma-bola3.webp", "/public/images/complexes/1/cerro-loma-bola4.webp", "/public/images/complexes/1/cerro-loma-bola5.webp", "/public/images/complexes/1/cerro-loma-bola6.webp"],
+      "images": ["/public/images/complexes/1/alojamiento.jpg", "/public/images/complexes/1/alojamiento2.jpg", "/public/images/complexes/1/alojamiento3.jpg"],
       "tel":"3544506114",
       "instagram": "",
       "email": "",
@@ -172,22 +69,9 @@
       "lat": -32.2139243749852,
       "lng": -65.0529901002833,
       "address": "La Paz, Traslasierra - Cordoba",
-      "images": ["/public/images/complexes/2/los-nogales1.webp", "/public/images/complexes/2/los-nogales2.webp", "/public/images/complexes/2/los-nogales3.webp"],
+      "images": ["/public/images/complexes/2/los-nogales1.jpg", "/public/images/complexes/2/los-nogales2.jpg", "/public/images/complexes/2/los-nogales3.jpg"],
       "tel":"3544446044",
       "instagram": "@losnogales_casasdealquiler",
-      "email": "",
-      "web": "",
-      "check": true
-    },
-    {
-      "name": "Villa Dora - Casa de té",
-      "description": "Cabañas para 2, 4 y 6 personas, día de té y pileta, almuerzos y cenas.",
-      "lat": -32.2184447058933,
-      "lng": -65.02374102023371,
-      "address": "Loma Bola - Cordoba",
-      "images": ["/public/images/complexes/3/villa-dora1.webp", "/public/images/complexes/3/villa-dora2.webp", "/public/images/complexes/3/villa-dora3.webp", "/public/images/complexes/3/villa-dora4.webp", "/public/images/complexes/3/villa-dora5.webp", "/public/images/complexes/3/villa-dora6.webp", "/public/images/complexes/3/villa-dora7.webp", "/public/images/complexes/3/villa-dora8.webp", "/public/images/complexes/3/villa-dora9.webp"],
-      "tel":"1168982552",
-      "instagram": "@villadoralomabola",
       "email": "",
       "web": "",
       "check": true
