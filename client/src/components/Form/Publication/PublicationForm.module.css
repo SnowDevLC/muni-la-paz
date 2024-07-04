@@ -73,7 +73,9 @@
 
       .video {
         aspect-ratio: 16/9;
-        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
         height: auto;
       }
 
@@ -177,3 +179,21 @@
     }
   }
 }
+
+
+
+@media screen and (max-width: 980px) {
+  .content {
+    .form{
+      .divInput {
+        .video {
+          margin-left: 0;
+          margin-right: 0;
+          width: auto;
+        }
+      } 
+    }
+  }
+}
+
+
