@@ -34,6 +34,7 @@ export default function PublicationForm({ publication, authUser }) {
     isEvent: publication?.isEvent || false,
     date: publication?.date ? new Date(publication.date) : new Date(),
     eventDate: publication?.eventDate ? new Date(publication.eventDate) : new Date(),
+    video: publication?.video || "",
   });
 
   let footer;
@@ -142,6 +143,7 @@ export default function PublicationForm({ publication, authUser }) {
         formData.append("isEvent", input.isEvent);
         formData.append("date", input.date.toISOString());
         formData.append("eventDate", input.eventDate.toISOString());
+        formData.append("video", input.video);
 
         input.images.forEach((image) => {
           formData.append(`images`, image);
@@ -160,6 +162,7 @@ export default function PublicationForm({ publication, authUser }) {
               isEvent: false,
               date: new Date(),
               eventDate: new Date(),
+              video: "",
             });
             Swal.fire({
               title: "Creado",
@@ -202,6 +205,7 @@ export default function PublicationForm({ publication, authUser }) {
         formData.append("date", input.date.toISOString());
         formData.append("eventDate", input.eventDate.toISOString());
         formData.append("check", false);
+        formData.append("video", input.video);
 
         if (input.images.length) {
           input.images.forEach((image) => {
@@ -222,6 +226,7 @@ export default function PublicationForm({ publication, authUser }) {
               isEvent: false,
               date: new Date(),
               eventDate: new Date(),
+              video: "",
             });
             Swal.fire({
               title: "Actulaizado",
@@ -321,6 +326,36 @@ export default function PublicationForm({ publication, authUser }) {
                 />
               </div>
             )}
+
+            <div className={style.divInput}>
+              <label>
+                Video{" "}
+                <input
+                  type="text"
+                  name="video"
+                  value={input.video}
+                  onChange={handleChange}
+                  placeholder="Video"
+                  className={style.inputText}
+                />
+              </label>
+
+              {input.video && (
+                <div className={style.video}>
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={input.video.replace("watch?v=", "embed/")}
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              )}
+
+              {/* {errors.name && <p className=" text-red-600 text-sm font-semibold ">{errors.name}</p>} */}
+            </div>
 
             <div className={style.divInput}>
               {input.type === "Concejo" ? (
@@ -456,6 +491,36 @@ export default function PublicationForm({ publication, authUser }) {
                 />
               </div>
             )}
+
+            <div className={style.divInput}>
+              <label>
+                Video{" "}
+                <input
+                  type="text"
+                  name="video"
+                  value={input.video}
+                  onChange={handleChange}
+                  placeholder="Video"
+                  className={style.inputText}
+                />
+              </label>
+
+              {input.video && input.video.includes("youtube.com/watch?v=") && (
+                <div className={style.video}>
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={input.video.replace("watch?v=", "embed/")}
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              )}
+
+              {/* {errors.name && <p className=" text-red-600 text-sm font-semibold ">{errors.name}</p>} */}
+            </div>
 
             <div className={style.divInput}>
               {input.type === "Concejo" ? (

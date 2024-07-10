@@ -161,6 +161,12 @@
   }
 }
 
+.video {
+  aspect-ratio: 16/9;
+  width: auto;
+  height: auto;
+}
+
 .share {
   display: flex;
   flex-direction: column;
