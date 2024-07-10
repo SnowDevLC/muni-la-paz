@@ -2,7 +2,7 @@ require("dotenv").config();
 const { Sequelize } = require("sequelize");
 const { UserModel, PublicationModel, ComplexModel } = require('../models');
 
-const { loadData } = require('../seeder/loadData');
+//const { loadData } = require('../seeder/loadData');
 
 const sequelize = new Sequelize(process.env.DB, {
   logging: false,
@@ -23,7 +23,7 @@ const dbConnection = async () => {
   try {
     await sequelize.sync({ force: false });
     console.log("DB Connect");
-    // await loadData(User, Publication, Complex);
+    //await loadData(User, Publication, Complex);
   } catch (error) {
     throw new Error("Fail DB Connect");
   }

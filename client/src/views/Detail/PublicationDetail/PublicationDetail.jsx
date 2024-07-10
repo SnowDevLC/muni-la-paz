@@ -108,6 +108,19 @@ export default function PublicationDetail() {
                 )}
               </div>
               <h1>{publication?.title}</h1>
+              {publication?.video && publication.video !== "" && (
+                <div className={style.video}>
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={publication.video.replace("watch?v=", "embed/")}
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              )}
               <p>{publication?.description}</p>
             </div>
             <div className={style.share}>

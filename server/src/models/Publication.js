@@ -43,6 +43,11 @@ module.exports = (sequelize) => {
       allowNull: false,
       defaultValue: ['']
     },
+    video: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: ""
+    },
     check: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
