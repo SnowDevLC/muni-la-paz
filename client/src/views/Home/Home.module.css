@@ -17,16 +17,18 @@ main {
   & .buttonNavCenter {
     background-color: white;
     color: var(--main-color);
-    width: 200px;
+    flex: 1 0 calc(12.5% - 1rem);
+    max-width: calc(12.5% - 1rem);
     height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1.5rem;
     transition: 0.4s ease-in-out;
+    text-align: center;
+    gap: .5rem;
     & .icon {
-      font-size: 4rem;
+      font-size: 3.5rem;
     }
     & span {
       font-size: 20px;
@@ -271,6 +273,12 @@ main {
   .publications {
     grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
   }
+  .navCenter {
+    .buttonNavCenter {
+      flex: 1 0 calc(25% - 1rem);
+      max-width: calc(25% - 1rem);
+    }
+  }
 }
 
 @media screen and (max-width: 1400px) {
@@ -298,6 +306,20 @@ main {
   }
 }
 
+@media screen and (max-width: 900px) {
+  .navCenter {
+    .buttonNavCenter {
+      height: 150px;
+      .icon {
+        font-size: 3rem;
+      }
+      span {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 600px) {
   main {
     margin-top: 70px;
@@ -309,9 +331,9 @@ main {
     gap: 1rem;
     margin-top: -1rem;
     .buttonNavCenter {
-      width: 120px;
+      flex: 1 0 calc(50% - 1rem);
+      max-width: calc(50% - 1rem);
       height: 120px;
-      gap: 1rem;
       .icon {
         font-size: 2.5rem;
       }
