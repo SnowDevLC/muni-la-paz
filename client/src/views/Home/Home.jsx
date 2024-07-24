@@ -1,6 +1,6 @@
 import { Carousel, Publication } from "../../components";
 import { Link } from "react-router-dom";
-import { FaArrowRight } from "react-icons/fa6";
+import { FaArrowRight, FaFileInvoiceDollar } from "react-icons/fa6";
 import { MdCabin, MdOutlineLibraryBooks, MdEvent, MdSportsSoccer } from "react-icons/md";
 import { FaHeartbeat, FaBook, FaRegCalendarAlt } from "react-icons/fa";
 import { format, setDefaultOptions } from "date-fns";
@@ -55,6 +55,16 @@ export default function Home({ publications, complexes }) {
           <MdEvent className={style.icon} />
           <span>Eventos</span>
         </Link>
+        <Link to="https://municipalidad.com/lapaz" className={style.buttonNavCenter}>
+          <div className={style.divIcon}>
+            <FaFileInvoiceDollar className={style.icon} />
+          </div>
+          <span>Deuda</span>
+        </Link>
+        <Link to="https://municipalidad.com/lapaz" className={style.buttonNavCenter}>
+          <FaFileInvoiceDollar className={style.icon} />
+          <span>Pagar Servicios</span>
+        </Link>
       </div>
       <section className={style.notices}>
         <div className={style.titlePublications}>
@@ -66,7 +76,13 @@ export default function Home({ publications, complexes }) {
             Más noticias <FaArrowRight size={25} />
           </Link>
         </div>
-        <Link to={`/noticia/${filteredPublications[0]?.id}/${encodeURIComponent(filteredPublications[0]?.title).replace(/%20/g, '-')}`} className={style.firstNotice}>
+        <Link
+          to={`/noticia/${filteredPublications[0]?.id}/${encodeURIComponent(filteredPublications[0]?.title).replace(
+            /%20/g,
+            "-"
+          )}`}
+          className={style.firstNotice}
+        >
           <div className={style.firstNoticeImg}>
             <img src={VITE_BACKEND_URL + filteredPublications[0]?.images[0]} alt={filteredPublications[0]?.id} />
           </div>
@@ -84,8 +100,7 @@ export default function Home({ publications, complexes }) {
         <div className={style.publications}>
           {filteredPublications?.map(
             (publication, index) =>
-              index > 0 && 
-              <Publication key={index} publication={publication} isDetailPage={false} />
+              index > 0 && <Publication key={index} publication={publication} isDetailPage={false} />
           )}
         </div>
         <Link to="/noticias" className={style.linkMobile}>
@@ -144,11 +159,7 @@ export default function Home({ publications, complexes }) {
       <section>
         <div className={style.map}>
           <LoadScript googleMapsApiKey={VITE_GOOGLE_MAPS_API_KEY}>
-            <GoogleMap
-              center={{ lat: -32.217487, lng: -65.049124 }}
-              zoom={15}
-              mapContainerStyle={{ height: "400px" }}
-            >
+            <GoogleMap center={{ lat: -32.217487, lng: -65.049124 }} zoom={15} mapContainerStyle={{ height: "400px" }}>
               <Marker position={{ lat: -32.217487, lng: -65.049124 }} onClick={handleMarkerClick} />
             </GoogleMap>
           </LoadScript>
