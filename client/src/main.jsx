@@ -5,6 +5,7 @@ import App from "./App.jsx";
 import "./index.css";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import { Analytics } from "@vercel/analytics/react";
 
 import AuthProvider from "react-auth-kit";
 import createStore from "react-auth-kit/createStore";
@@ -19,6 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Provider store={store}>
       <AuthProvider store={storeAuth}>
         <BrowserRouter>
+          <Analytics />
           <App />
         </BrowserRouter>
       </AuthProvider>
