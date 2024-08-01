@@ -85,7 +85,6 @@
   button:hover {
     background-color: var(--card-link-hover-color);
   }
-
 }
 
 .images {
@@ -111,7 +110,22 @@
   button:hover {
     background-color: var(--card-link-hover-color);
   }
+}
 
+.button {
+  margin-left: auto;
+  margin-right: 1rem;
+  border: none;
+  cursor: pointer;
+  background: var(--main-color);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+}
+.button:hover {
+  background-color: var(--card-link-hover-color);
 }
 
 .imagesSmall {
@@ -157,7 +171,7 @@
 
   h1 {
     border-bottom: 2px solid var(--main-color);
-    padding-bottom: .5rem;
+    padding-bottom: 0.5rem;
   }
 }
 
@@ -170,7 +184,7 @@
 .share {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
   align-items: center;
   padding: 2rem;
   margin-top: auto;
@@ -238,7 +252,7 @@
   right: 10px;
   font-size: 18px;
   font-weight: 600;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 2rem;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
@@ -261,7 +275,7 @@
   border-radius: 10px;
 
   .icon {
-    font-size: 2.5rem
+    font-size: 2.5rem;
   }
 }
 
@@ -273,10 +287,6 @@
   right: 10px;
 }
 
-
-
-
-
 /*---MEDIIA QUERIES---*/
 @media screen and (max-width: 1400px) {
   .contentComplex {
@@ -287,15 +297,14 @@
     margin: 1rem 0;
     row-gap: 1rem;
   }
-  
+
   .dataLeft {
     width: 100%;
   }
-  
+
   .dataRight {
     width: 100%;
   }
-  
 }
 
 @media screen and (max-width: 1050px) {
@@ -303,8 +312,6 @@
     display: none;
   }
 }
-
-
 
 @media screen and (max-width: 600px) {
   .container {
@@ -315,7 +322,7 @@
     width: 90%;
     font-size: 14px;
   }
-  
+
   .contentComplex {
     width: 90%;
   }
@@ -323,10 +330,10 @@
   .closeButton {
     font-size: 12px;
   }
-  
+
   .carouselControl {
     .icon {
-      font-size: 1.5rem
+      font-size: 1.5rem;
     }
   }
 }
