@@ -55,10 +55,21 @@ export default function PublicationForm({ publication, authUser }) {
         };
       } else if (e.target.type === "file") {
         const selectedFiles = Array.from(e.target.files);
+        let filesWithTypes = selectedFiles.map((file) => ({
+          file,
+          preview: URL.createObjectURL(file),
+          type: file.type,
+        }));
+
+        if (prevInput.type === "Concejo") {
+          filesWithTypes.sort((a, b) => (a.type === "application/pdf" ? -1 : 1));
+        }
+
         return {
           ...prevInput,
-          images: selectedFiles,
-          imagesPreviews: selectedFiles.map((file) => URL.createObjectURL(file)),
+          images: filesWithTypes.map((fileObj) => fileObj.file),
+          imagesPreviews: filesWithTypes.map((fileObj) => fileObj.preview),
+          fileTypes: filesWithTypes.map((fileObj) => fileObj.type),
         };
       } else if (e.target.name === "isEvent") {
         return {
@@ -361,20 +372,54 @@ export default function PublicationForm({ publication, authUser }) {
               {input.type === "Concejo" ? (
                 <>
                   <label>
-                    Click para subir Archivo PDF
-                    <input type="file" className={style.inputFile} onChange={handleChange} />
+                    Click para subir Archivo PDF e Imágenes
+                    <input type="file" multiple className={style.inputFile} onChange={handleChange} />
                     <FaUpload className={style.icon} />
                   </label>
-                  {input.imagesPreviews && input.imagesPreviews.length > 0 && (
-                    <div className={style.divPdf}>
-                      <Document file={input.imagesPreviews[0]} className={style.pdf}>
-                        <Page pageNumber={1} width={280} renderTextLayer={false} renderAnnotationLayer={false} />
-                        <div className={style.buttonsImage}>
-                          <button type="button" className={style.btnDelete} onClick={() => removePhoto(0, "pdf")}>
-                            eliminar
-                          </button>
-                        </div>
-                      </Document>
+                  {input.imagesPreviews && (
+                    <div className={style.gridImages}>
+                      {input.imagesPreviews.map((link, index) => {
+                        const fileType = input.fileTypes[index];
+                        const isPdf = fileType === "application/pdf";
+                        return (
+                          <div key={index}>
+                            {isPdf ? (
+                              <div className={style.divPdf}>
+                                <Document file={link} className={style.pdf}>
+                                  <Page
+                                    pageNumber={1}
+                                    width={280}
+                                    renderTextLayer={false}
+                                    renderAnnotationLayer={false}
+                                  />
+                                  <div className={style.buttonsImage}>
+                                    <button
+                                      type="button"
+                                      className={style.btnDelete}
+                                      onClick={() => removePhoto(index, "pdf")}
+                                    >
+                                      eliminar
+                                    </button>
+                                  </div>
+                                </Document>
+                              </div>
+                            ) : (
+                              <div className={style.divImage}>
+                                <img src={link} alt={`imagen ${index}`} />
+                                <div className={style.buttonsImage}>
+                                  <button
+                                    type="button"
+                                    className={style.btnDelete}
+                                    onClick={() => removePhoto(index, "imagen")}
+                                  >
+                                    eliminar
+                                  </button>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
                     </div>
                   )}
                 </>
@@ -526,20 +571,54 @@ export default function PublicationForm({ publication, authUser }) {
               {input.type === "Concejo" ? (
                 <>
                   <label>
-                    Click para subir Archivo PDF
-                    <input type="file" className={style.inputFile} onChange={handleChange} />
+                    Click para subir Archivo PDF e Imágenes
+                    <input type="file" multiple className={style.inputFile} onChange={handleChange} />
                     <FaUpload className={style.icon} />
                   </label>
-                  {input.imagesPreviews && input.imagesPreviews.length > 0 && (
-                    <div className={style.divPdf}>
-                      <Document file={input.imagesPreviews[0]} className={style.pdf}>
-                        <Page pageNumber={1} width={280} renderTextLayer={false} renderAnnotationLayer={false} />
-                        <div className={style.buttonsImage}>
-                          <button type="button" className={style.btnDelete} onClick={() => removePhoto(0, "pdf")}>
-                            eliminar
-                          </button>
-                        </div>
-                      </Document>
+                  {input.imagesPreviews && (
+                    <div className={style.gridImages}>
+                      {input.imagesPreviews.map((link, index) => {
+                        const fileType = input.fileTypes[index];
+                        const isPdf = fileType === "application/pdf";
+                        return (
+                          <div key={index}>
+                            {isPdf ? (
+                              <div className={style.divPdf}>
+                                <Document file={link} className={style.pdf}>
+                                  <Page
+                                    pageNumber={1}
+                                    width={280}
+                                    renderTextLayer={false}
+                                    renderAnnotationLayer={false}
+                                  />
+                                  <div className={style.buttonsImage}>
+                                    <button
+                                      type="button"
+                                      className={style.btnDelete}
+                                      onClick={() => removePhoto(index, "pdf")}
+                                    >
+                                      eliminar
+                                    </button>
+                                  </div>
+                                </Document>
+                              </div>
+                            ) : (
+                              <div className={style.divImage}>
+                                <img src={link} alt={`imagen ${index}`} />
+                                <div className={style.buttonsImage}>
+                                  <button
+                                    type="button"
+                                    className={style.btnDelete}
+                                    onClick={() => removePhoto(index, "imagen")}
+                                  >
+                                    eliminar
+                                  </button>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
                     </div>
                   )}
                 </>

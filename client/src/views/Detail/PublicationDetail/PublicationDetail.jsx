@@ -32,15 +32,18 @@ export default function PublicationDetail() {
   };
 
   const handleArrowClick = (direction) => {
-    const currentIndex = publication.images.indexOf(selectedImage.replace(VITE_BACKEND_URL, ""));
+    const imagesWithoutPdf = publication.images.filter((image) => !image.includes('.pdf'));
+    const currentIndex = imagesWithoutPdf.indexOf(selectedImage.replace(VITE_BACKEND_URL, ""));
     let newIndex;
+  
     if (direction === "left") {
-      newIndex = currentIndex === 0 ? publication.images.length - 1 : currentIndex - 1;
+      newIndex = currentIndex === 0 ? imagesWithoutPdf.length - 1 : currentIndex - 1;
     } else {
-      newIndex = currentIndex === publication.images.length - 1 ? 0 : currentIndex + 1;
+      newIndex = currentIndex === imagesWithoutPdf.length - 1 ? 0 : currentIndex + 1;
     }
-    setSelectedImage(VITE_BACKEND_URL + publication.images[newIndex]);
-  };
+  
+    setSelectedImage(VITE_BACKEND_URL + imagesWithoutPdf[newIndex]);
+  }
 
   const openPdf = (pdf) => {
     window.open(pdf, "_blank");
@@ -59,10 +62,41 @@ export default function PublicationDetail() {
         <div className={style.contentComplex}>
           <div className={style.dataLeft}>
             {publication.type === "Concejo" ? (
-              <div className={style.pdfContainer}>
-                <embed src={VITE_BACKEND_URL + publication.images[0]} type="application/pdf" className={style.pdf} />
-                <button onClick={() => openPdf(VITE_BACKEND_URL + publication.images[0])}>Ver PDF</button>
-              </div>
+              <>
+                <div className={style.pdfContainer}>
+                  <embed src={VITE_BACKEND_URL + publication.images[0]} type="application/pdf" className={style.pdf} />
+                  <button onClick={() => openPdf(VITE_BACKEND_URL + publication.images[0])}>Ver PDF</button>
+                </div>
+                {publication?.images && publication.images.length > 1 && (
+                  <div className={style.imagesSmall}>
+                    {publication?.images.map(
+                      (image, index) =>
+                        index > 0 &&
+                        index < 4 && (
+                          <div key={index} className={style.imageContainer}>
+                            <img
+                              onClick={() => handleImageClick(VITE_BACKEND_URL + image)}
+                              src={VITE_BACKEND_URL + image}
+                              alt={publication.title + "image" + index}
+                              className={index === 3 && publication.images.length > 4 ? style.imageWithOverlay : ""}
+                            />
+                            {index === 3 && publication.images.length > 4 && (
+                              <div className={style.overlay}>+{publication.images.length - 4}</div>
+                            )}
+                          </div>
+                        )
+                    )}
+                  </div>
+                )}
+                {publication?.images && publication.images.length > 1 && (
+                  <button
+                    className={style.button}
+                    onClick={() => handleImageClick(VITE_BACKEND_URL + publication.images[1])}
+                  >
+                    Ver Galería de Fotos
+                  </button>
+                )}
+              </>
             ) : (
               <div className={style.images}>
                 {publication?.images && publication.images.length > 0 && (
@@ -115,9 +149,9 @@ export default function PublicationDetail() {
                     height="100%"
                     src={publication.video.replace("watch?v=", "embed/")}
                     title="YouTube video player"
-                    frameborder="0"
+                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
+                    allowFullScreen
                   ></iframe>
                 </div>
               )}
@@ -133,7 +167,6 @@ export default function PublicationDetail() {
                 >
                   <FaWhatsapp className={style.icon} />
                 </a>
-
                 <a
                   href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`}
                   target="_blank"
@@ -149,7 +182,8 @@ export default function PublicationDetail() {
             <div className={style.lastNotices}>
               <div className={style.title}>
                 <h2>
-                  Últimas<br></br>
+                  Últimas
+                  <br />
                   <span className={style.span}>Noticias</span>
                 </h2>
               </div>
