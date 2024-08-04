@@ -144,12 +144,12 @@ export const councilors = [
   },
   {
     name: 'Dario Guardia',
-    position: 'Concejal - Vice Presidente H.C.D',
+    position: 'Concejal - Vicepresidente H.C.D',
     img: '/img/team/DarioGuardia.webp'
   },
   {
     name: 'Teresita Velazquez',
-    position: 'Concejal - Vice Presidente 1era',
+    position: 'Concejal - Vicepresidente 1era',
     img: '/img/team/TeresitaVelazquez.webp'
   },
   {
@@ -181,18 +181,13 @@ export const councilors = [
 
 export const court = [
   {
-    name: 'Lorenzo Brito',
-    position: 'Presidente H.T.D.C',
-    img: '/img/team/LorenzoBrito.webp'
-  },
-  {
     name: 'Carolina Bequis',
-    position: 'Vice Presidente H.T.D.C',
+    position: 'Presidente H.T.D.C',
     img: '/img/team/CarolinaBequis.webp'
   },
   {
     name: 'Virginia Ochoa',
-    position: 'Secretaria H.T.D.C',
+    position: 'Vicepresidente H.T.D.C',
     img: '/img/team/VirginiaOchoa.webp'
   },
   {
