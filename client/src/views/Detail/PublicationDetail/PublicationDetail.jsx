@@ -32,22 +32,24 @@ export default function PublicationDetail() {
   };
 
   const handleArrowClick = (direction) => {
-    const imagesWithoutPdf = publication.images.filter((image) => !image.includes('.pdf'));
+    const imagesWithoutPdf = publication.images.filter((image) => !image.includes(".pdf"));
     const currentIndex = imagesWithoutPdf.indexOf(selectedImage.replace(VITE_BACKEND_URL, ""));
     let newIndex;
-  
+
     if (direction === "left") {
       newIndex = currentIndex === 0 ? imagesWithoutPdf.length - 1 : currentIndex - 1;
     } else {
       newIndex = currentIndex === imagesWithoutPdf.length - 1 ? 0 : currentIndex + 1;
     }
-  
+
     setSelectedImage(VITE_BACKEND_URL + imagesWithoutPdf[newIndex]);
-  }
+  };
 
   const openPdf = (pdf) => {
     window.open(pdf, "_blank");
   };
+
+  const isPdf = publication?.images[0]?.endsWith('.pdf');
 
   return (
     publication && (
@@ -63,10 +65,26 @@ export default function PublicationDetail() {
           <div className={style.dataLeft}>
             {publication.type === "Concejo" ? (
               <>
-                <div className={style.pdfContainer}>
-                  <embed src={VITE_BACKEND_URL + publication.images[0]} type="application/pdf" className={style.pdf} />
-                  <button onClick={() => openPdf(VITE_BACKEND_URL + publication.images[0])}>Ver PDF</button>
-                </div>
+                {isPdf ? (
+                  <div className={style.pdfContainer}>
+                    <embed
+                      src={VITE_BACKEND_URL + publication.images[0]}
+                      type="application/pdf"
+                      className={style.pdf}
+                    />
+                    <button onClick={() => openPdf(VITE_BACKEND_URL + publication.images[0])}>Ver PDF</button>
+                  </div>
+                ) : (
+                  <div className={style.images}>
+                    {publication?.images && publication.images.length > 0 && (
+                      <img
+                        onClick={() => handleImageClick(VITE_BACKEND_URL + publication.images[0])}
+                        src={VITE_BACKEND_URL + publication.images[0]}
+                        alt={publication.title + " image"}
+                      />
+                    )}
+                  </div>
+                )}
                 {publication?.images && publication.images.length > 1 && (
                   <div className={style.imagesSmall}>
                     {publication?.images.map(
@@ -135,12 +153,14 @@ export default function PublicationDetail() {
               </div>
             )}
             <div className={style.text}>
-              <div className={style.dates}>
-                <small>Publicado: {format(publication.date, "PPPP")}</small>
-                {publication.isEvent && (
-                  <small className={style.eventDate}>Evento: {format(publication.eventDate, "PPPP")}</small>
-                )}
-              </div>
+              {publication.type !== "Concejo" && (
+                <div className={style.dates}>
+                  <small>Publicado: {format(publication.date, "PPPP")}</small>
+                  {publication.isEvent && (
+                    <small className={style.eventDate}>Evento: {format(publication.eventDate, "PPPP")}</small>
+                  )}
+                </div>
+              )}
               <h1>{publication?.title}</h1>
               {publication?.video && publication.video !== "" && (
                 <div className={style.video}>

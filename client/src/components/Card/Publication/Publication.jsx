@@ -95,6 +95,9 @@ export default function Publication({ publication, complex, authUser, handleForm
       }
     });
   };
+
+  const isPdf = publication?.images[0]?.endsWith(".pdf");
+
   return publication ? (
     <div className={style.card}>
       <Link
@@ -103,16 +106,22 @@ export default function Publication({ publication, complex, authUser, handleForm
         className={style.data}
       >
         {publication.type === "Concejo" ? (
-          <div className={style.pdfContainer}>
-            <Document file={VITE_BACKEND_URL + publication.images[0]}>
-              <Page pageNumber={1} width={225} renderTextLayer={false} renderAnnotationLayer={false} />
-            </Document>
-          </div>
+          isPdf ? (
+            <div className={style.pdfContainer}>
+              <Document file={VITE_BACKEND_URL + publication.images[0]}>
+                <Page pageNumber={1} width={225} renderTextLayer={false} renderAnnotationLayer={false} />
+              </Document>
+            </div>
+          ) : (
+            <img src={VITE_BACKEND_URL + publication.images[0]} alt={publication.title} />
+          )
         ) : (
           <img src={VITE_BACKEND_URL + publication.images[0]} alt={publication.title} />
         )}
         <div className={style.cardText}>
-          {location.pathname !== "/" && <small>Publicado: {format(publication.date, "PP")}</small>}
+          {publication.type !== "Concejo" && location.pathname !== "/" && (
+            <small>Publicado: {format(publication.date, "PP")}</small>
+          )}
           <h3>{publication.title}</h3>
           <p>{publication.description}</p>
           {publication.isEvent && (
