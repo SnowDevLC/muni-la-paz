@@ -1,9 +1,15 @@
 export const imagesCarrousel = [
   {
+    src: "/img/carrousel/ciudad1.webp",
+  },
+  {
     src: "/img/carrousel/aljibe-entrada-lapaz.webp",
   },
   {
     src: "/img/carrousel/vivalapatria.webp",
+  },
+  {
+    src: "/img/carrousel/ciudad3.webp",
   },
   {
     src: "/img/carrousel/camino-lomabola.webp",
@@ -33,7 +39,7 @@ export const imagesCarrousel = [
     src: "/img/carrousel/loma-bola-desde-la-cruz.webp",
   },
   {
-    src: "/img/carrousel/festival3.webp",
+    src: "/img/carrousel/ciudad3.webp",
   },
   {
     src: "/img/carrousel/muni.webp",
