@@ -1,6 +1,6 @@
 import { Carousel, Publication } from "../../components";
 import { Link } from "react-router-dom";
-import { FaArrowRight, FaFileInvoiceDollar } from "react-icons/fa6";
+import { FaArrowRight, FaFileInvoiceDollar, FaRadio } from "react-icons/fa6";
 import { MdCabin, MdOutlineLibraryBooks, MdEvent, MdSportsSoccer } from "react-icons/md";
 import { FaHeartbeat, FaBook, FaRegCalendarAlt } from "react-icons/fa";
 import { format, setDefaultOptions } from "date-fns";
@@ -55,15 +55,15 @@ export default function Home({ publications, complexes }) {
           <MdEvent className={style.icon} />
           <span>Eventos</span>
         </Link>
-        <Link to="https://municipalidad.com/lapaz" className={style.buttonNavCenter}>
+        <Link to="https://www.municipal1065.onlineradio.com.ar/" className={style.buttonNavCenter}>
           <div className={style.divIcon}>
-            <FaFileInvoiceDollar className={style.icon} />
+            <FaRadio className={style.icon} />
           </div>
-          <span>Deuda</span>
+          <span>Radio</span>
         </Link>
         <Link to="https://municipalidad.com/lapaz" className={style.buttonNavCenter}>
           <FaFileInvoiceDollar className={style.icon} />
-          <span>Pagar Servicios</span>
+          <span>Pagar Servicios y Deuda</span>
         </Link>
       </div>
       <section className={style.notices}>
