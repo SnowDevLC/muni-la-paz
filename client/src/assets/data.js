@@ -24,7 +24,7 @@ export const imagesCarrousel = [
     src: "/img/carrousel/cruz-de-caña.webp",
   },
   {
-    src: "/img/carrousel/festival1.webp",
+    src: "/img/carrousel/rosa2.webp",
   },
   {
     src: "/img/carrousel/la-cruz-nublado.webp",
@@ -33,7 +33,7 @@ export const imagesCarrousel = [
     src: "/img/carrousel/festival2.webp",
   },
   {
-    src: "/img/carrousel/las-chacras.webp",
+    src: "/img/carrousel/rosa.webp",
   },
   {
     src: "/img/carrousel/loma-bola-desde-la-cruz.webp",
@@ -67,6 +67,9 @@ export const imagesCarrousel = [
   },
   {
     src: "/img/carrousel/todoss.webp",
+  },
+  {
+    src: "/img/carrousel/rosa3.webp",
   },
 ];
 
